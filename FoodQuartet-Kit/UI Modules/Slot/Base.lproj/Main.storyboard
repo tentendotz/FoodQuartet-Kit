@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hGc-EH-VJe">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="kdm-G8-mFi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hGc-EH-VJe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CyZ-jW-AHe">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="labelColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" systemColor="labelColor"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" systemColor="labelColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="11I-Ph-FKa" kind="relationship" relationship="rootViewController" id="PlT-pB-q6r"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ur3-5x-9Cu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1344" y="30"/>
+        </scene>
+        <!--Slot View Controller-->
+        <scene sceneID="Zxl-5i-Ze9">
+            <objects>
+                <viewController id="11I-Ph-FKa" userLabel="Slot View Controller" customClass="SlotViewController" customModule="FoodQuartet" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cxS-Ej-Lzi">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="vEc-wX-b6a">
+                                <rect key="frame" x="16" y="107" width="361" height="34.666666666666657"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Filter" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="2pJ-mt-haX">
+                                        <rect key="frame" x="0.0" y="0.0" width="73.666666666666671" height="14.333333333333334"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZj-su-BYm">
+                                        <rect key="frame" x="0.0" y="14.333333333333327" width="104" height="20.333333333333329"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="line.3.horizontal.decrease" catalog="system" imagePlacement="leading" title="No Filter" imagePadding="6" titleAlignment="leading">
+                                            <backgroundConfiguration key="background"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="light"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="2" bottom="0.0" trailing="5"/>
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="currentFilterPressed:" destination="11I-Ph-FKa" eventType="touchUpInside" id="qKP-fY-dc3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KU7-l6-y8f" userLabel="SSFWs Stack View">
+                                <rect key="frame" x="8" y="153.66666666666666" width="377" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRf-bS-hRF" userLabel="Spring Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="69" height="64"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="ladybug" catalog="system"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="filled" image="circle.hexagongrid" catalog="system" imagePlacement="top" title="Spring" imagePadding="4" cornerStyle="large" titleAlignment="center">
+                                            <backgroundConfiguration key="background" strokeWidth="2" strokeOutset="1"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            <color key="baseBackgroundColor" name="TertiaryColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="seasonsPressed:" destination="11I-Ph-FKa" eventType="touchUpInside" id="bLi-K8-qBM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jS3-1c-aOx" userLabel="Summer Button">
+                                        <rect key="frame" x="77" y="0.0" width="69" height="64"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="sun.min" catalog="system"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="filled" imagePlacement="top" title="Summer" imagePadding="4" cornerStyle="large" titleAlignment="center">
+                                            <imageReference key="image" image="sun.max" catalog="system"/>
+                                            <backgroundConfiguration key="background" strokeWidth="2" strokeOutset="1"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            <color key="baseBackgroundColor" name="TertiaryColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="seasonsPressed:" destination="11I-Ph-FKa" eventType="touchUpInside" id="6Q3-Yq-RWD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsc-Vc-DR6" userLabel="Fall Button">
+                                        <rect key="frame" x="154" y="0.0" width="69" height="64"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="leaf" catalog="system"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="filled" imagePlacement="top" title="Fall" imagePadding="4" cornerStyle="large">
+                                            <imageReference key="image" image="leaf" catalog="system"/>
+                                            <backgroundConfiguration key="background" strokeWidth="2" strokeOutset="1"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            <color key="baseBackgroundColor" name="TertiaryColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="seasonsPressed:" destination="11I-Ph-FKa" eventType="touchUpInside" id="vYB-TA-fPj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFG-QU-Jsu" userLabel="Winter Button">
+                                        <rect key="frame" x="231" y="0.0" width="69" height="64"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="snowflake" catalog="system"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="filled" imagePlacement="top" title="Winter" imagePadding="4" cornerStyle="large">
+                                            <imageReference key="image" image="snowflake" catalog="system"/>
+                                            <backgroundConfiguration key="background" strokeWidth="2" strokeOutset="1"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            <color key="baseBackgroundColor" name="TertiaryColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="seasonsPressed:" destination="11I-Ph-FKa" eventType="touchUpInside" id="EM7-h6-B1U"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYf-tK-sTb" userLabel="Month Picker Button">
+                                        <rect key="frame" x="308" y="0.0" width="69" height="64"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="ellipsis" catalog="system"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="ellipsis" catalog="system" cornerStyle="large">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            <color key="baseBackgroundColor" name="PrimaryColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="oPp-Vd-8vn" kind="presentation" id="g5v-KB-lYq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="P5q-gp-2fx"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7jf-8v-SAM">
+                                <rect key="frame" x="0.0" y="225.66666666666666" width="393" height="500.33333333333337"/>
+                                <color key="backgroundColor" name="PrimaryColor"/>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="M9L-nD-zEf">
+                                <rect key="frame" x="24" y="734" width="345" height="52"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mo-XW-qLg" userLabel="Change Items Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="164.66666666666666" height="52"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title=" Start">
+                                            <imageReference key="image" image="digitalcrown.arrow.clockwise" catalog="system" symbolScale="default" variableValue="0.20000000000000007"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="filled" title="Change" imagePadding="3" cornerStyle="capsule">
+                                            <imageReference key="image" image="rectangle.2.swap" catalog="system"/>
+                                            <backgroundConfiguration key="background" strokeWidth="2" strokeOutset="1">
+                                                <color key="strokeColor" systemColor="tertiaryLabelColor"/>
+                                            </backgroundConfiguration>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="medium"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            <color key="baseBackgroundColor" name="SecondaryColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="changeItemsPressed:" destination="11I-Ph-FKa" eventType="touchUpInside" id="w0I-4Y-oAK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inv-0f-4lh">
+                                        <rect key="frame" x="180.66666666666663" y="0.0" width="164.33333333333337" height="52"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title=" Search">
+                                            <imageReference key="image" image="safari" catalog="system"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="filled" imagePlacement="trailing" title="Next" imagePadding="3" cornerStyle="capsule">
+                                            <imageReference key="image" image="arrow.forward" catalog="system"/>
+                                            <backgroundConfiguration key="background" strokeWidth="2" strokeOutset="1">
+                                                <color key="strokeColor" systemColor="tertiaryLabelColor"/>
+                                            </backgroundConfiguration>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="medium"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            <color key="baseBackgroundColor" name="SecondaryColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="ckt-cr-qbE" kind="show" id="Hjb-NJ-2gJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="zbc-Ve-5YB"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5iI-IW-F7S"/>
+                        <color key="backgroundColor" name="PrimaryColor"/>
+                        <constraints>
+                            <constraint firstItem="KU7-l6-y8f" firstAttribute="leading" secondItem="5iI-IW-F7S" secondAttribute="leading" constant="8" id="5YV-ma-Jqb"/>
+                            <constraint firstItem="7jf-8v-SAM" firstAttribute="leading" secondItem="5iI-IW-F7S" secondAttribute="leading" id="96N-Ib-2Lf"/>
+                            <constraint firstItem="5iI-IW-F7S" firstAttribute="bottom" secondItem="M9L-nD-zEf" secondAttribute="bottom" constant="32" id="Aa3-5i-kx5"/>
+                            <constraint firstItem="M9L-nD-zEf" firstAttribute="top" secondItem="7jf-8v-SAM" secondAttribute="bottom" constant="8" id="JTe-CK-ndG"/>
+                            <constraint firstItem="5iI-IW-F7S" firstAttribute="trailing" secondItem="KU7-l6-y8f" secondAttribute="trailing" constant="8" id="Wc4-CX-P26"/>
+                            <constraint firstItem="7jf-8v-SAM" firstAttribute="top" secondItem="KU7-l6-y8f" secondAttribute="bottom" constant="8" id="d0r-3e-3mx"/>
+                            <constraint firstItem="5iI-IW-F7S" firstAttribute="trailing" secondItem="M9L-nD-zEf" secondAttribute="trailing" constant="24" id="dFY-iw-Ui6"/>
+                            <constraint firstItem="5iI-IW-F7S" firstAttribute="trailing" secondItem="7jf-8v-SAM" secondAttribute="trailing" id="dl1-kt-YOX"/>
+                            <constraint firstItem="5iI-IW-F7S" firstAttribute="trailing" secondItem="vEc-wX-b6a" secondAttribute="trailing" constant="16" id="ehn-qJ-vbN"/>
+                            <constraint firstItem="vEc-wX-b6a" firstAttribute="top" secondItem="5iI-IW-F7S" secondAttribute="top" constant="4" id="rvC-8h-eRI"/>
+                            <constraint firstItem="KU7-l6-y8f" firstAttribute="top" secondItem="vEc-wX-b6a" secondAttribute="bottom" constant="12" id="tS3-Zu-x4i"/>
+                            <constraint firstItem="M9L-nD-zEf" firstAttribute="leading" secondItem="5iI-IW-F7S" secondAttribute="leading" constant="24" id="uK4-KA-wCc"/>
+                            <constraint firstItem="vEc-wX-b6a" firstAttribute="leading" secondItem="5iI-IW-F7S" secondAttribute="leading" constant="16" id="vOA-Xr-6hX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="FoodQuartet" id="IwC-V5-Vqw"/>
+                    <connections>
+                        <outlet property="currentFilterButton" destination="pZj-su-BYm" id="0BU-MB-zmf"/>
+                        <outlet property="fallButton" destination="Bsc-Vc-DR6" id="fCc-GY-bXd"/>
+                        <outlet property="monthPickerButton" destination="NYf-tK-sTb" id="btN-5i-TK8"/>
+                        <outlet property="springButton" destination="JRf-bS-hRF" id="8hd-5y-7b6"/>
+                        <outlet property="summerButton" destination="jS3-1c-aOx" id="09d-zv-fYk"/>
+                        <outlet property="tableView" destination="7jf-8v-SAM" id="8WW-vY-u7v"/>
+                        <outlet property="winterButton" destination="xFG-QU-Jsu" id="feD-1B-Myh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tO0-hd-JjS" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-514" y="30"/>
+        </scene>
+        <!--MonthPicker-->
+        <scene sceneID="ZRv-NY-C2r">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MonthPicker" id="oPp-Vd-8vn" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="aD0-oD-qQr"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4OI-W9-hbF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="79" y="11"/>
+        </scene>
+        <!--WebSearch-->
+        <scene sceneID="dKJ-du-918">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WebSearch" id="ckt-cr-qbE" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="dPm-Xw-E5h"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IHf-51-I5q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73" y="262"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.forward" catalog="system" width="128" height="95"/>
+        <image name="circle.hexagongrid" catalog="system" width="128" height="115"/>
+        <image name="digitalcrown.arrow.clockwise" catalog="system" width="128" height="105"/>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <image name="ladybug" catalog="system" width="128" height="122"/>
+        <image name="leaf" catalog="system" width="128" height="111"/>
+        <image name="line.3.horizontal.decrease" catalog="system" width="128" height="73"/>
+        <image name="rectangle.2.swap" catalog="system" width="128" height="102"/>
+        <image name="safari" catalog="system" width="128" height="123"/>
+        <image name="snowflake" catalog="system" width="119" height="128"/>
+        <image name="sun.max" catalog="system" width="128" height="125"/>
+        <image name="sun.min" catalog="system" width="128" height="123"/>
+        <namedColor name="PrimaryColor">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondaryColor">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TertiaryColor">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
