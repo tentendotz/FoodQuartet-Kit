@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		06180D372A5055640052D1B3 /* WebSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06180D362A5055640052D1B3 /* WebSearch.storyboard */; };
 		06180D3A2A5055C40052D1B3 /* WebSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06180D392A5055C40052D1B3 /* WebSearchViewController.swift */; };
+		06180D3E2A50788F0052D1B3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06180D3D2A50788F0052D1B3 /* Constants.swift */; };
 		06A3212F2A504BB300F1B4C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A3212E2A504BB300F1B4C2 /* AppDelegate.swift */; };
 		06A321312A504BB300F1B4C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A321302A504BB300F1B4C2 /* SceneDelegate.swift */; };
 		06A321362A504BB300F1B4C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A321342A504BB300F1B4C2 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		06180D362A5055640052D1B3 /* WebSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebSearch.storyboard; sourceTree = "<group>"; };
 		06180D392A5055C40052D1B3 /* WebSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSearchViewController.swift; sourceTree = "<group>"; };
+		06180D3D2A50788F0052D1B3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		06A3212B2A504BB300F1B4C2 /* FoodQuartet-Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FoodQuartet-Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06A3212E2A504BB300F1B4C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06A321302A504BB300F1B4C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 				06180D392A5055C40052D1B3 /* WebSearchViewController.swift */,
 			);
 			path = WebSearch;
+			sourceTree = "<group>";
+		};
+		06180D3F2A5078960052D1B3 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				06180D3D2A50788F0052D1B3 /* Constants.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		06A321222A504BB300F1B4C2 = {
@@ -121,6 +131,7 @@
 				06A321502A50526600F1B4C2 /* Slot */,
 				06A321512A50527B00F1B4C2 /* MonthPicker */,
 				06180D382A5055950052D1B3 /* WebSearch */,
+				06180D3F2A5078960052D1B3 /* Shared */,
 			);
 			path = "UI Modules";
 			sourceTree = "<group>";
@@ -205,6 +216,7 @@
 				06180D3A2A5055C40052D1B3 /* WebSearchViewController.swift in Sources */,
 				06A321592A5054B100F1B4C2 /* MonthPickerViewController.swift in Sources */,
 				06A3214C2A50517E00F1B4C2 /* SlotCell.swift in Sources */,
+				06180D3E2A50788F0052D1B3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
