@@ -8,6 +8,15 @@
 import UIKit
 
 class SlotViewController: UIViewController {
+    
+    @IBOutlet private weak var currentFilterButton: UIButton!
+    @IBOutlet private weak var springButton: UIButton!
+    @IBOutlet private weak var summerButton: UIButton!
+    @IBOutlet private weak var fallButton: UIButton!
+    @IBOutlet private weak var winterButton: UIButton!
+    @IBOutlet private weak var monthPickerButton: UIButton!
+    @IBOutlet private weak var tableView: UITableView!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +24,18 @@ class SlotViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    
+    // MARK: - User Interaction
+    
+    @IBAction private func seasonsPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction private func currentFilterPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction private func changeItemsPressed(_ sender: UIButton) {
+    }
+    
     /*
     // MARK: - Navigation
 
