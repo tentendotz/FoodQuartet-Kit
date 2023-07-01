@@ -10,10 +10,10 @@ import UIKit
 class SlotViewController: UIViewController {
     
     @IBOutlet private weak var currentFilterButton: UIButton!
-    @IBOutlet private weak var springButton: UIButton!
-    @IBOutlet private weak var summerButton: UIButton!
-    @IBOutlet private weak var fallButton: UIButton!
-    @IBOutlet private weak var winterButton: UIButton!
+    @IBOutlet private weak var springButton: SeasonButton!
+    @IBOutlet private weak var summerButton: SeasonButton!
+    @IBOutlet private weak var fallButton: SeasonButton!
+    @IBOutlet private weak var winterButton: SeasonButton!
     @IBOutlet private weak var monthPickerButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
 
@@ -27,7 +27,7 @@ class SlotViewController: UIViewController {
     
     // MARK: - User Interaction
     
-    @IBAction private func seasonsPressed(_ sender: UIButton) {
+    @IBAction private func seasonsPressed(_ sender: SeasonButton) {
     }
     
     @IBAction private func currentFilterPressed(_ sender: UIButton) {

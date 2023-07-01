@@ -72,7 +72,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KU7-l6-y8f" userLabel="SSFWs Stack View">
                                 <rect key="frame" x="8" y="153.66666666666666" width="377" height="64"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRf-bS-hRF" userLabel="Spring Button">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRf-bS-hRF" userLabel="Spring Button" customClass="SeasonButton" customModule="FoodQuartet_Kit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="69" height="64"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal">
@@ -90,7 +90,7 @@
                                             <action selector="seasonsPressed:" destination="11I-Ph-FKa" eventType="touchUpInside" id="bLi-K8-qBM"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jS3-1c-aOx" userLabel="Summer Button">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jS3-1c-aOx" userLabel="Summer Button" customClass="SeasonButton" customModule="FoodQuartet_Kit" customModuleProvider="target">
                                         <rect key="frame" x="77" y="0.0" width="69" height="64"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal">
@@ -109,7 +109,7 @@
                                             <action selector="seasonsPressed:" destination="11I-Ph-FKa" eventType="touchUpInside" id="6Q3-Yq-RWD"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsc-Vc-DR6" userLabel="Fall Button">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsc-Vc-DR6" userLabel="Fall Button" customClass="SeasonButton" customModule="FoodQuartet_Kit" customModuleProvider="target">
                                         <rect key="frame" x="154" y="0.0" width="69" height="64"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal">
@@ -128,7 +128,7 @@
                                             <action selector="seasonsPressed:" destination="11I-Ph-FKa" eventType="touchUpInside" id="vYB-TA-fPj"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFG-QU-Jsu" userLabel="Winter Button">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFG-QU-Jsu" userLabel="Winter Button" customClass="SeasonButton" customModule="FoodQuartet_Kit" customModuleProvider="target">
                                         <rect key="frame" x="231" y="0.0" width="69" height="64"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal">
