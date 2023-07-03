@@ -8,6 +8,22 @@
 import UIKit
 
 extension UIColor {
+    
+    enum Hex: Int {
+        // Season Colors
+        case springHex = 0xFF8A8A
+        case summerHex = 0xF19900
+        case fallHex = 0xD94C3D
+        case winterHex = 0x4C80B3
+    }
+    
+    static func calculateColor(_ type: Hex) -> UIColor {
+        return UIColor(hex: type.rawValue)
+    }
+}
+
+
+extension UIColor {
 
     convenience init(hex: Int, alpha: CGFloat = 1) {
         let r = CGFloat((hex & 0xFF0000) >> 16) / 255.0
