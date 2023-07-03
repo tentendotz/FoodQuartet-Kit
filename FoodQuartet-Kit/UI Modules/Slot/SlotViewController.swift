@@ -28,6 +28,25 @@ class SlotViewController: UIViewController {
     // MARK: - User Interaction
     
     @IBAction private func seasonsPressed(_ sender: SeasonButton) {
+        let seasonColor: UIColor?
+        
+        if sender.isSelected {
+            sender.isSelected = false
+        } else {
+            switch sender {
+            case springButton:
+                seasonColor = UIColor.calculateColor(.springHex)
+            case summerButton:
+                seasonColor = UIColor.calculateColor(.summerHex)
+            case fallButton:
+                seasonColor = UIColor.calculateColor(.fallHex)
+            case winterButton:
+                seasonColor = UIColor.calculateColor(.winterHex)
+            default: return
+            }
+            
+            sender.switchState(isSelected: true, backgroundColor: seasonColor)
+        }
     }
     
     @IBAction private func currentFilterPressed(_ sender: UIButton) {
