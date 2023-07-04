@@ -16,8 +16,8 @@ class SlotViewController: UIViewController {
     @IBOutlet private weak var winterButton: SeasonButton!
     @IBOutlet private weak var monthPickerButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,6 +45,7 @@ class SlotViewController: UIViewController {
             default: return
             }
             
+            deselectAllSeasonButtons()
             sender.switchState(isSelected: true, backgroundColor: seasonColor)
         }
     }
@@ -54,7 +55,7 @@ class SlotViewController: UIViewController {
     
     @IBAction private func changeItemsPressed(_ sender: UIButton) {
     }
-    
+        
     /*
     // MARK: - Navigation
 
@@ -64,5 +65,18 @@ class SlotViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+
+extension SlotViewController {
+    
+    // MARK: - Additional Helpers
+    
+    /// Deselect all four season buttons
+    private func deselectAllSeasonButtons() {
+        springButton.isSelected = false
+        summerButton.isSelected = false
+        fallButton.isSelected = false
+        winterButton.isSelected = false
+    }
 }
