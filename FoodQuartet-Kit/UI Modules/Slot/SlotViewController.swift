@@ -10,14 +10,14 @@ import UIKit
 class SlotViewController: UIViewController {
     
     @IBOutlet private weak var currentFilterButton: UIButton!
-    @IBOutlet private weak var springButton: UIButton!
-    @IBOutlet private weak var summerButton: UIButton!
-    @IBOutlet private weak var fallButton: UIButton!
-    @IBOutlet private weak var winterButton: UIButton!
+    @IBOutlet private weak var springButton: SeasonButton!
+    @IBOutlet private weak var summerButton: SeasonButton!
+    @IBOutlet private weak var fallButton: SeasonButton!
+    @IBOutlet private weak var winterButton: SeasonButton!
     @IBOutlet private weak var monthPickerButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,7 +27,27 @@ class SlotViewController: UIViewController {
     
     // MARK: - User Interaction
     
-    @IBAction private func seasonsPressed(_ sender: UIButton) {
+    @IBAction private func seasonsPressed(_ sender: SeasonButton) {
+        let seasonColor: UIColor?
+        
+        if sender.isSelected {
+            sender.isSelected = false
+        } else {
+            switch sender {
+            case springButton:
+                seasonColor = UIColor.calculateColor(.springHex)
+            case summerButton:
+                seasonColor = UIColor.calculateColor(.summerHex)
+            case fallButton:
+                seasonColor = UIColor.calculateColor(.fallHex)
+            case winterButton:
+                seasonColor = UIColor.calculateColor(.winterHex)
+            default: return
+            }
+            
+            deselectAllSeasonButtons()
+            sender.switchState(isSelected: true, backgroundColor: seasonColor)
+        }
     }
     
     @IBAction private func currentFilterPressed(_ sender: UIButton) {
@@ -35,7 +55,7 @@ class SlotViewController: UIViewController {
     
     @IBAction private func changeItemsPressed(_ sender: UIButton) {
     }
-    
+        
     /*
     // MARK: - Navigation
 
@@ -45,5 +65,18 @@ class SlotViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+
+extension SlotViewController {
+    
+    // MARK: - Additional Helpers
+    
+    /// Deselect all four season buttons
+    private func deselectAllSeasonButtons() {
+        springButton.isSelected = false
+        summerButton.isSelected = false
+        fallButton.isSelected = false
+        winterButton.isSelected = false
+    }
 }
