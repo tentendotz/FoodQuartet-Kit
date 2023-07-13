@@ -13,6 +13,7 @@
 		06180D412A507C080052D1B3 /* SeasonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06180D402A507C080052D1B3 /* SeasonButton.swift */; };
 		06180D432A508EC80052D1B3 /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06180D422A508EC80052D1B3 /* UIColor+HexColor.swift */; };
 		062554232A5EC8D600AEF4F5 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062554222A5EC8D600AEF4F5 /* Food.swift */; };
+		062554262A60338000AEF4F5 /* FoodsRawData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062554252A60338000AEF4F5 /* FoodsRawData.swift */; };
 		06A3212F2A504BB300F1B4C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A3212E2A504BB300F1B4C2 /* AppDelegate.swift */; };
 		06A321312A504BB300F1B4C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A321302A504BB300F1B4C2 /* SceneDelegate.swift */; };
 		06A321362A504BB300F1B4C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A321342A504BB300F1B4C2 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		06180D402A507C080052D1B3 /* SeasonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonButton.swift; sourceTree = "<group>"; };
 		06180D422A508EC80052D1B3 /* UIColor+HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexColor.swift"; sourceTree = "<group>"; };
 		062554222A5EC8D600AEF4F5 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		062554252A60338000AEF4F5 /* FoodsRawData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsRawData.swift; sourceTree = "<group>"; };
 		06A3212B2A504BB300F1B4C2 /* FoodQuartet-Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FoodQuartet-Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06A3212E2A504BB300F1B4C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06A321302A504BB300F1B4C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		062554242A5EC8DD00AEF4F5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				062554252A60338000AEF4F5 /* FoodsRawData.swift */,
 				062554222A5EC8D600AEF4F5 /* Food.swift */,
 			);
 			path = Models;
@@ -244,6 +247,7 @@
 				06A321592A5054B100F1B4C2 /* MonthPickerViewController.swift in Sources */,
 				062554232A5EC8D600AEF4F5 /* Food.swift in Sources */,
 				06A3214C2A50517E00F1B4C2 /* SlotCell.swift in Sources */,
+				062554262A60338000AEF4F5 /* FoodsRawData.swift in Sources */,
 				06180D3E2A50788F0052D1B3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
