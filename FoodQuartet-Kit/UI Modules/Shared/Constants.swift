@@ -46,3 +46,17 @@ enum K {
         static let accent = "AccentColor"
     }
 }
+
+
+extension K {
+    
+    /// Localization = L10n
+    enum L10n {
+                
+        // Four Seasons Filter
+        static var spring = "Spring (MAR. APR. MAY)"
+        static let summer = "Summer (JUN. JUL. AUG.)"
+        static let fall = "Fall (SEP. OCT. NOV.)"
+        static let winter = "Winter (DEC. JAN. FEB.)"
+    }
+}
