@@ -32,4 +32,27 @@ extension FoodBrain {
         }
         return foods
     }
+    
+    
+    // MARK: - Data Converting Helpers
+    
+    private func classifySeasons(from numbers: [Int]) -> Set<String> {
+        var seasons = Set<String>()
+        for number in numbers {
+            switch number {
+            case 3...5:
+                seasons.insert(K.L10n.spring)
+            case 6...8:
+                seasons.insert(K.L10n.summer)
+            case 9...11:
+                seasons.insert(K.L10n.fall)
+            case 12, 1...2:
+                seasons.insert(K.L10n.winter)
+            default:
+                print("Error classifying season, '\(number)' is out of conditions.")
+            }
+        }
+        return seasons
+    }
+    
 }
