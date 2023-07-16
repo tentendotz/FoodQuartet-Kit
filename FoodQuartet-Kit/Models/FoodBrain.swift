@@ -9,7 +9,7 @@ import UIKit
 
 struct FoodBrain {
     
-    var items = [Food]()
+    lazy var items = generateFoods()
 }
 
 
@@ -25,14 +25,13 @@ extension FoodBrain {
             let hex = String(foodData[1])
             let rawNumbers = foodData[3].split(separator: ",").compactMap { Int($0) }
             
-            let hexColor = UIColor(hexString: hex)
+            let hexColor = UIColor(hexString: hex)!
             
             let seasons = classifySeasons(from: rawNumbers)
             let months = rawNumbers.map { DateFormatter.fullNameOfMonth(from: $0) }
             let harvestTime = seasons.union(months)
 
-            // TODO: - Creating food class object
-
+            foods.append(Food(name: name, color: hexColor, harvestTime: harvestTime))
         }
         return foods
     }
