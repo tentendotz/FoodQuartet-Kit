@@ -27,6 +27,10 @@ extension FoodBrain {
             
             let hexColor = UIColor(hexString: hex)
             
+            let seasons = classifySeasons(from: rawNumbers)
+            let months = rawNumbers.map { DateFormatter.fullNameOfMonth(from: $0) }
+            let harvestTime = seasons.union(months)
+
             // TODO: - Creating food class object
 
         }
@@ -54,5 +58,4 @@ extension FoodBrain {
         }
         return seasons
     }
-    
 }
