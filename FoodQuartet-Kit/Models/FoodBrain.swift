@@ -13,6 +13,8 @@ struct FoodBrain {
 }
 
 
+// MARK: - Raw Data Parsing
+
 extension FoodBrain {
     
     private func generateFoods() -> [Food] {
@@ -23,7 +25,7 @@ extension FoodBrain {
             let foodData = line.split(separator: "/")
             let name = String(foodData[0])
             let hex = String(foodData[1])
-            let rawNumbers = foodData[3].split(separator: ",").compactMap { Int($0) }
+            let rawNumbers = foodData[2].split(separator: ",").compactMap { Int($0) }
             
             let hexColor = UIColor(hexString: hex)!
             
@@ -37,7 +39,7 @@ extension FoodBrain {
     }
     
     
-    // MARK: - Data Converting Helpers
+    // MARK: - Data Generating Helpers
     
     private func classifySeasons(from numbers: [Int]) -> Set<String> {
         var seasons = Set<String>()
