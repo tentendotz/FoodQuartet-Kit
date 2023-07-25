@@ -104,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				06A3212D2A504BB300F1B4C2 /* FoodQuartet-Kit */,
+				06A321532A5052D800F1B4C2 /* Resources */,
 				06A3212C2A504BB300F1B4C2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,9 +124,9 @@
 				06A321302A504BB300F1B4C2 /* SceneDelegate.swift */,
 				062554242A5EC8DD00AEF4F5 /* Models */,
 				06A321552A50531E00F1B4C2 /* UI Modules */,
+				06180D3F2A5078960052D1B3 /* Shared */,
 				06A3213C2A504BB600F1B4C2 /* Info.plist */,
 				06A321392A504BB600F1B4C2 /* LaunchScreen.storyboard */,
-				06A321532A5052D800F1B4C2 /* Resources */,
 			);
 			path = "FoodQuartet-Kit";
 			sourceTree = "<group>";
@@ -165,7 +166,6 @@
 				06A321502A50526600F1B4C2 /* Slot */,
 				06A321512A50527B00F1B4C2 /* MonthPicker */,
 				06180D382A5055950052D1B3 /* WebSearch */,
-				06180D3F2A5078960052D1B3 /* Shared */,
 			);
 			path = "UI Modules";
 			sourceTree = "<group>";
