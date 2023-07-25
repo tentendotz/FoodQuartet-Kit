@@ -29,9 +29,7 @@ extension FoodBrain {
             
             let hexColor = UIColor(hexString: hex)!
             
-            let seasons = classifySeasons(from: rawNumbers)
-            let months = rawNumbers.map { DateFormatter.fullNameOfMonth(from: $0) }
-            let harvestTime = seasons.union(months)
+            let harvestTime = performConversion(from: rawNumbers)
 
             foods.append(Food(name: name, color: hexColor, harvestTime: harvestTime))
         }
@@ -40,6 +38,12 @@ extension FoodBrain {
     
     
     // MARK: - Data Generating Helpers
+    
+    private func performConversion(from numbers: [Int]) -> Set<String> {
+        let seasons = classifySeasons(from: numbers)
+        let months = numbers.map { DateFormatter.fullNameOfMonth(from: $0) }
+        return seasons.union(months)
+    }
     
     private func classifySeasons(from numbers: [Int]) -> Set<String> {
         var seasons = Set<String>()
