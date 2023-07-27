@@ -25,13 +25,14 @@ extension FoodBrain {
             let foodData = line.split(separator: "/")
             let name = String(foodData[0])
             let hex = String(foodData[1])
-            let rawNumbers = foodData[2].split(separator: ",").compactMap { Int($0) }
+            let group = Food.Kind(alias: foodData[2])
+            let rawNumbers = foodData[3].split(separator: ",").compactMap { Int($0) }
             
             let hexColor = UIColor(hexString: hex)!
             
             let harvestTime = performConversion(from: rawNumbers)
 
-            foods.append(Food(name: name, color: hexColor, harvestTime: harvestTime))
+            foods.append(Food(name: name, color: hexColor, group: group, harvestTime: harvestTime))
         }
         return foods
     }

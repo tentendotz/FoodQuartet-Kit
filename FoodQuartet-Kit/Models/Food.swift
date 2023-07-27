@@ -11,12 +11,14 @@ final class Food {
     
     let name: String
     let color: UIColor
+    let group: Kind
     let harvestTime: Set<String>
     var isSelected = false
     
-    init(name: String, color: UIColor, harvestTime: Set<String>) {
+    init(name: String, color: UIColor, group: Kind, harvestTime: Set<String>) {
         self.name = name
         self.color = color
+        self.group = group
         self.harvestTime = harvestTime
     }
 }
