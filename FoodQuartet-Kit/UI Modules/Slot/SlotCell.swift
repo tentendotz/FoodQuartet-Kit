@@ -51,4 +51,19 @@ extension SlotCell {
             itemView.backgroundColor = UIColor.clear
         }
     }
+    
+    func configureSeasonIcons(caption: String, spring: Bool, summer: Bool, fall: Bool, winter: Bool) {
+        captionLabel.text = caption
+        
+        let colorless = UIColor(named: K.Colors.tertiary)
+        springView.backgroundColor = spring ? UIColor.calculateColor(.springHex) : colorless
+        summerView.backgroundColor = summer ? UIColor.calculateColor(.summerHex) : colorless
+        fallView.backgroundColor = fall ? UIColor.calculateColor(.fallHex) : colorless
+        winterView.backgroundColor = winter ? UIColor.calculateColor(.winterHex) : colorless
+        
+        springImageView.tintColor = spring ? .white : .tertiaryLabel
+        summerImageView.tintColor = summer ? .white : .tertiaryLabel
+        fallImageView.tintColor = fall ? .white : .tertiaryLabel
+        winterImageView.tintColor = winter ? .white : .tertiaryLabel
+    }
 }
