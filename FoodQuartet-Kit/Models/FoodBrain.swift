@@ -25,13 +25,28 @@ extension FoodBrain {
             let foodData = line.split(separator: "/")
             let name = String(foodData[0])
             let hex = String(foodData[1])
-            let rawNumbers = foodData[2].split(separator: ",").compactMap { Int($0) }
+            let group = Food.Kind(alias: foodData[2])
+            let rawNumbers = foodData[3].split(separator: ",").compactMap { Int($0) }
             
-            let hexColor = UIColor(hexString: hex)!
+            let color = UIColor(hexString: hex) ?? {
+                print("\(name)'s \(hex) is an invalid value.")
+                
+                switch group {
+                case .vegetable: return UIColor.calculateColor(.vegetableHex)
+                case .mushroom: return UIColor.calculateColor(.mushroomHex)
+                case .seafood: return UIColor.calculateColor(.seafoodHex)
+                case .meat: return UIColor.calculateColor(.meatHex)
+                case .fruit: return UIColor.calculateColor(.fruitHex)
+                case .others: return UIColor.calculateColor(.othersHex)
+                }
+            }()
+            
+            if rawNumbers.isEmpty { fatalError("Error generating food, The \(name) doesn't have any rawNumbers.") }
+            guard rawNumbers.allSatisfy({ 1...12 ~= $0 }) else { fatalError("Error generating food, The \(name)'s '\(rawNumbers)' is out of range.") }
             
             let harvestTime = performConversion(from: rawNumbers)
-
-            foods.append(Food(name: name, color: hexColor, harvestTime: harvestTime))
+            
+            foods.append(Food(name: name, color: color, group: group, harvestTime: harvestTime))
         }
         return foods
     }

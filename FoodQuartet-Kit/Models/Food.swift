@@ -11,12 +11,48 @@ final class Food {
     
     let name: String
     let color: UIColor
+    let group: Kind
     let harvestTime: Set<String>
     var isSelected = false
     
-    init(name: String, color: UIColor, harvestTime: Set<String>) {
+    init(name: String, color: UIColor, group: Kind, harvestTime: Set<String>) {
         self.name = name
         self.color = color
+        self.group = group
         self.harvestTime = harvestTime
+    }
+}
+
+
+extension Food {
+    
+    // MARK: - Food Group Enumeration
+    
+    enum Kind: String {
+        case vegetable, mushroom, seafood, meat, fruit, others
+        
+        init(alias: Substring) {
+            switch alias.lowercased() {
+            case "veg": self = .vegetable
+            case "mush": self = .mushroom
+            case "fish": self = .seafood
+            case "sea": self = .seafood
+            case "meat": self = .meat
+            case "fruit": self = .fruit
+            default: self = .others
+            }
+        }
+        
+        // TODO: - Implement localization...
+        var localized: String {
+            switch self {
+            case .vegetable: return "Vegetable"
+            case .mushroom: return "Mushroom"
+            case .seafood: return "Seafood"
+            case .meat: return "Meat"
+            case .fruit: return "Fruit"
+            case .others: return "Others"
+            }
+        }
     }
 }
