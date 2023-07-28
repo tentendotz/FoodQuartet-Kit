@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SlotCell: UITableViewCell {
+final class SlotCell: UITableViewCell {
     
     // Food name and color
     @IBOutlet private weak var titleLabel: UILabel!
@@ -24,16 +24,9 @@ class SlotCell: UITableViewCell {
     @IBOutlet private weak var summerImageView: UIImageView!
     @IBOutlet private weak var fallImageView: UIImageView!
     @IBOutlet private weak var winterImageView: UIImageView!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }
 
