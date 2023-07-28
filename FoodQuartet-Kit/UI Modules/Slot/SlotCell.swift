@@ -35,5 +35,20 @@ class SlotCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+}
+
+
+extension SlotCell {
     
+    func configureCell(title: String, color: UIColor, isSelected: Bool) {
+        titleLabel.text = title
+        itemView.layer.borderColor = color.cgColor
+        if isSelected {
+            pinnedImageView.image = UIImage(systemName: "pin.circle.fill")
+            itemView.backgroundColor = color.withAlphaComponent(0.4)
+        } else {
+            pinnedImageView.image = UIImage(systemName: "circle.dotted")
+            itemView.backgroundColor = UIColor.clear
+        }
+    }
 }
