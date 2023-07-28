@@ -41,8 +41,11 @@ extension FoodBrain {
                 }
             }()
             
+            if rawNumbers.isEmpty { fatalError("Error generating food, The \(name) doesn't have any rawNumbers.") }
+            guard rawNumbers.allSatisfy({ 1...12 ~= $0 }) else { fatalError("Error generating food, The \(name)'s '\(rawNumbers)' is out of range.") }
+            
             let harvestTime = performConversion(from: rawNumbers)
-
+            
             foods.append(Food(name: name, color: color, group: group, harvestTime: harvestTime))
         }
         return foods
