@@ -30,8 +30,12 @@ extension SlotViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: K.SlotVC.cellNibName, bundle: nil), forCellReuseIdentifier: K.SlotVC.cellIdentifier)
     }
     
     
@@ -89,4 +93,29 @@ extension SlotViewController {
         fallButton.isSelected = false
         winterButton.isSelected = false
     }
+}
+
+
+// MARK: - UITableViewDataSource & UITableViewDelegate
+
+extension SlotViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return slotItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.SlotVC.cellIdentifier, for: indexPath) as? SlotCell else {
+            fatalError("Unable to dequeue SlotCell")
+        }
+        let foodItem = slotItems[indexPath.row]
+        
+        return cell
+    }
+    
+}
+
+
+extension SlotViewController: UITableViewDelegate {
+    
 }
