@@ -118,4 +118,9 @@ extension SlotViewController: UITableViewDataSource {
 
 extension SlotViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        slotItems[indexPath.row].isSelected.toggle()
+        tableView.reloadRows(at: [indexPath], with: .none)
+    }
+    
 }
