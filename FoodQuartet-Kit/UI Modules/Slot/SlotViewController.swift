@@ -17,6 +17,16 @@ class SlotViewController: UIViewController {
     @IBOutlet private weak var monthPickerButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
     
+    // MARK: - Properties and Sections
+    
+    var slotItems = [Food]()
+    
+}
+
+
+extension SlotViewController {
+    
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
