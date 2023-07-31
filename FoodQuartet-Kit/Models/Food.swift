@@ -56,3 +56,15 @@ extension Food {
         }
     }
 }
+
+
+extension Food {
+    
+    // MARK: - Data Manipulation Method
+    
+    func retrieveSeasons() -> Set<String> {
+        let fourSeasons: Set = [K.L10n.spring, K.L10n.summer, K.L10n.fall, K.L10n.winter]
+        let itemSeasons = self.harvestTime.intersection(fourSeasons)
+        return itemSeasons
+    }
+}
