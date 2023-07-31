@@ -109,8 +109,8 @@ extension SlotViewController: UITableViewDataSource {
             fatalError("Unable to dequeue SlotCell")
         }
         let foodItem = slotItems[indexPath.row]
-        
-        return cell
+        let configuredCell = applyConfiguration(cell, with: foodItem)
+        return configuredCell
     }
     
 }
@@ -123,4 +123,26 @@ extension SlotViewController: UITableViewDelegate {
         tableView.reloadRows(at: [indexPath], with: .none)
     }
     
+}
+
+
+// MARK: - UI Layout & Configuration
+
+extension SlotViewController {
+    
+    private func applyConfiguration(_ cell: SlotCell, with foodItem: Food) -> SlotCell {
+        let itemSeasons = foodItem.retrieveSeasons()
+        let format = "%@/4 seasons"
+        let countLabel = String(format: format, itemSeasons.count.description)
+        
+        cell.configureCell(title: foodItem.name, color: foodItem.color, isSelected: foodItem.isSelected)
+        cell.configureSeasonIcons(
+            caption: countLabel,
+            spring: itemSeasons.contains(K.L10n.spring),
+            summer: itemSeasons.contains(K.L10n.summer),
+            fall: itemSeasons.contains(K.L10n.fall),
+            winter: itemSeasons.contains(K.L10n.winter)
+        )
+        return cell
+    }
 }
