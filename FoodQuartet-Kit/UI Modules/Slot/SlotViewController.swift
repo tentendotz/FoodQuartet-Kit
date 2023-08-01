@@ -19,6 +19,8 @@ class SlotViewController: UIViewController {
     
     // MARK: - Properties and Sections
     
+    private var foodBrain = FoodBrain()
+    
     var slotItems = [Food]()
     
 }
