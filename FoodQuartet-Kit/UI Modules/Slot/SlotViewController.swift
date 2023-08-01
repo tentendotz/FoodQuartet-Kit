@@ -33,6 +33,8 @@ extension SlotViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // TODO: - Replace all food items with actual data source in the future...
+        slotItems.append(contentsOf: foodBrain.items)
         
         
         tableView.dataSource = self
