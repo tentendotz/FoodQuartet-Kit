@@ -17,11 +17,29 @@ class SlotViewController: UIViewController {
     @IBOutlet private weak var monthPickerButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
     
+    // MARK: - Properties and Sections
+    
+    private var foodBrain = FoodBrain()
+    
+    var slotItems = [Food]()
+    
+}
+
+
+extension SlotViewController {
+    
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // TODO: - Replace all food items with actual data source in the future...
+        slotItems.append(contentsOf: foodBrain.items)
+        
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: K.SlotVC.cellNibName, bundle: nil), forCellReuseIdentifier: K.SlotVC.cellIdentifier)
     }
     
     
@@ -78,5 +96,73 @@ extension SlotViewController {
         summerButton.isSelected = false
         fallButton.isSelected = false
         winterButton.isSelected = false
+    }
+}
+
+
+// MARK: - UITableViewDataSource & UITableViewDelegate
+
+extension SlotViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return slotItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.SlotVC.cellIdentifier, for: indexPath) as? SlotCell else {
+            fatalError("Unable to dequeue SlotCell")
+        }
+        let foodItem = slotItems[indexPath.row]
+        let configuredCell = applyConfiguration(cell, with: foodItem)
+        return configuredCell
+    }
+    
+}
+
+
+extension SlotViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let cellHeight = CGFloat(88)
+        return slotItems.isEmpty ? 0 : cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        slotItems[indexPath.row].isSelected.toggle()
+        tableView.reloadRows(at: [indexPath], with: .none)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, completionHandler in
+            self.slotItems[indexPath.row].isSelected = false
+            self.slotItems.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            completionHandler(true)
+        }
+        let swipeConfig = UISwipeActionsConfiguration(actions: [deleteAction])
+        swipeConfig.performsFirstActionWithFullSwipe = true
+        return swipeConfig
+    }
+}
+
+
+// MARK: - UI Layout & Configuration
+
+extension SlotViewController {
+    
+    private func applyConfiguration(_ cell: SlotCell, with foodItem: Food) -> SlotCell {
+        let itemSeasons = foodItem.retrieveSeasons()
+        let format = "%@/4 seasons"
+        let countLabel = String(format: format, itemSeasons.count.description)
+        
+        cell.configureCell(title: foodItem.name, color: foodItem.color, isSelected: foodItem.isSelected)
+        cell.configureSeasonIcons(
+            caption: countLabel,
+            spring: itemSeasons.contains(K.L10n.spring),
+            summer: itemSeasons.contains(K.L10n.summer),
+            fall: itemSeasons.contains(K.L10n.fall),
+            winter: itemSeasons.contains(K.L10n.winter)
+        )
+        return cell
     }
 }
