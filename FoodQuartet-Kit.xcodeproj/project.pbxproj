@@ -27,6 +27,7 @@
 		06A3214D2A50517E00F1B4C2 /* SlotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06A3214B2A50517E00F1B4C2 /* SlotCell.xib */; };
 		06A321572A50539200F1B4C2 /* SlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A321562A50539200F1B4C2 /* SlotViewController.swift */; };
 		06A321592A5054B100F1B4C2 /* MonthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A321582A5054B100F1B4C2 /* MonthPickerViewController.swift */; };
+		06E13A0B2A7CD49F0084788E /* PlusButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E13A0A2A7CD49F0084788E /* PlusButtonCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		06A3214B2A50517E00F1B4C2 /* SlotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlotCell.xib; sourceTree = "<group>"; };
 		06A321562A50539200F1B4C2 /* SlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotViewController.swift; sourceTree = "<group>"; };
 		06A321582A5054B100F1B4C2 /* MonthPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPickerViewController.swift; sourceTree = "<group>"; };
+		06E13A0A2A7CD49F0084788E /* PlusButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButtonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				06A321562A50539200F1B4C2 /* SlotViewController.swift */,
 				06A3214B2A50517E00F1B4C2 /* SlotCell.xib */,
 				06A3214A2A50517E00F1B4C2 /* SlotCell.swift */,
+				06E13A0A2A7CD49F0084788E /* PlusButtonCell.swift */,
 				06180D402A507C080052D1B3 /* SeasonButton.swift */,
 			);
 			path = Slot;
@@ -257,6 +260,7 @@
 				06A321592A5054B100F1B4C2 /* MonthPickerViewController.swift in Sources */,
 				062554232A5EC8D600AEF4F5 /* Food.swift in Sources */,
 				06A3214C2A50517E00F1B4C2 /* SlotCell.swift in Sources */,
+				06E13A0B2A7CD49F0084788E /* PlusButtonCell.swift in Sources */,
 				06515F8C2A78035100772B08 /* UIView+IBInspectable.swift in Sources */,
 				062554262A60338000AEF4F5 /* FoodsRawData.swift in Sources */,
 				0625542A2A61905500AEF4F5 /* DateFormatter+MonthName.swift in Sources */,
