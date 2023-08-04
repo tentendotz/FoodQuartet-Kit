@@ -11,11 +11,18 @@ final class PlusButtonCell: UITableViewCell {
     
     let button = UIButton()
     
+    var isEnabled = true {
+        didSet {
+            button.setNeedsUpdateConfiguration()
+        }
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.backgroundColor = UIColor(named: K.Colors.primary)
         createSubview(in: contentView)
+        configureButton()
     }
     
     required init?(coder: NSCoder) {
@@ -40,4 +47,31 @@ extension PlusButtonCell {
         ])
     }
     
+    private func configureButton() {
+        var config = UIButton.Configuration.gray()
+        config.imagePadding = 4
+        config.cornerStyle = .small
+        let symbolConfig = UIImage.SymbolConfiguration(weight: .medium)
+        
+        button.configurationUpdateHandler = { [weak self] button in
+            guard let self = self else { return }
+            if self.isEnabled {
+                button.isUserInteractionEnabled = true
+                config.image = UIImage(systemName: "plus", withConfiguration: symbolConfig)
+                config.title = .none
+                config.baseForegroundColor = UIColor.systemGreen
+                config.baseBackgroundColor = UIColor(named: K.Colors.tertiary)
+                config.buttonSize = .medium
+            } else {
+                button.isUserInteractionEnabled = false
+                config.image = UIImage(systemName: "rectangle.and.hand.point.up.left.filled", withConfiguration: symbolConfig)
+                // TODO: - Implement localization...
+                config.title = "No more available items."
+                config.baseForegroundColor = UIColor.tertiaryLabel
+                config.baseBackgroundColor = UIColor.clear
+                config.buttonSize = .small
+            }
+            button.configuration = config
+        }
+    }
 }
