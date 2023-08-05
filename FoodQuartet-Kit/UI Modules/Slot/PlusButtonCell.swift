@@ -54,7 +54,7 @@ extension PlusButtonCell {
         let symbolConfig = UIImage.SymbolConfiguration(weight: .medium)
         
         button.configurationUpdateHandler = { [weak self] button in
-            guard let self = self else { return }
+            guard let self else { return }
             if self.isEnabled {
                 button.isUserInteractionEnabled = true
                 config.image = UIImage(systemName: "plus", withConfiguration: symbolConfig)
