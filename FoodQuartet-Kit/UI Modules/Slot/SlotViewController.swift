@@ -17,6 +17,12 @@ class SlotViewController: UIViewController {
     @IBOutlet private weak var monthPickerButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
     
+    private lazy var plusButtonCell: PlusButtonCell = {
+        let cell = PlusButtonCell()
+        return cell
+    }()
+    
+    
     // MARK: - Properties and Sections
     
     private var foodBrain = FoodBrain()
