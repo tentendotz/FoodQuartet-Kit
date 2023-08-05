@@ -23,12 +23,21 @@ class SlotViewController: UIViewController {
     }()
     
     
-    // MARK: - Properties and Sections
+    // MARK: - Properties and Section Handling
     
     private var foodBrain = FoodBrain()
     
     var slotItems = [Food]()
     
+    private enum Section: Int, CaseIterable {
+        case slots = 0, bottom
+        func countItems(of items: [Food]) -> Int {
+            switch self {
+            case .slots: return items.count
+            case .bottom: return 1
+            }
+        }
+    }
 }
 
 
