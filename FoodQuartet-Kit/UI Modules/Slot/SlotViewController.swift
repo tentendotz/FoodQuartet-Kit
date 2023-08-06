@@ -144,6 +144,9 @@ extension SlotViewController: UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return Section(rawValue: indexPath.section) == .slots ? true : false
+    }
 }
 
 
