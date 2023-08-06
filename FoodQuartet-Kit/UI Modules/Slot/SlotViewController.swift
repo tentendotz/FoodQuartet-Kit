@@ -119,6 +119,10 @@ extension SlotViewController {
 
 extension SlotViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return Section.allCases.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return slotItems.count
     }
