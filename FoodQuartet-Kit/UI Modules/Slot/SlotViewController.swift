@@ -124,16 +124,24 @@ extension SlotViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return slotItems.count
+        let sectionKind = Section(rawValue: section)
+        return sectionKind?.countItems(of: slotItems) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.SlotVC.cellIdentifier, for: indexPath) as? SlotCell else {
-            fatalError("Unable to dequeue SlotCell")
+        guard let sectionKind = Section(rawValue: indexPath.section) else { return .init() }
+        
+        switch sectionKind {
+        case .slots:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: K.SlotVC.cellIdentifier, for: indexPath) as? SlotCell else {
+                fatalError("Unable to dequeue SlotCell")
+            }
+            let foodItem = slotItems[indexPath.row]
+            let configuredCell = applyConfiguration(cell, with: foodItem)
+            return configuredCell
+        case .bottom:
+            return plusButtonCell
         }
-        let foodItem = slotItems[indexPath.row]
-        let configuredCell = applyConfiguration(cell, with: foodItem)
-        return configuredCell
     }
     
 }
