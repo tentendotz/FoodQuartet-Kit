@@ -154,7 +154,14 @@ extension SlotViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let cellHeight = CGFloat(88)
-        return slotItems.isEmpty ? 0 : cellHeight
+        let sectionKind = Section(rawValue: indexPath.section)
+        
+        switch sectionKind {
+        case .slots:
+            return slotItems.isEmpty ? 0 : cellHeight
+        default:
+            return UITableView.automaticDimension
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
