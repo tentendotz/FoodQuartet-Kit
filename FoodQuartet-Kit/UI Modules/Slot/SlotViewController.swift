@@ -175,11 +175,17 @@ extension SlotViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard let sectionKind = Section(rawValue: indexPath.section) else { return .init() }
+        
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, completionHandler in
-            self.slotItems[indexPath.row].isSelected = false
-            self.slotItems.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
-            completionHandler(true)
+            switch sectionKind {
+            case .slots:
+                self.slotItems[indexPath.row].isSelected = false
+                self.slotItems.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+                completionHandler(true)
+            default: completionHandler(false)
+            }
         }
         let swipeConfig = UISwipeActionsConfiguration(actions: [deleteAction])
         swipeConfig.performsFirstActionWithFullSwipe = true
