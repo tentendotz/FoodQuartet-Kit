@@ -165,8 +165,13 @@ extension SlotViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        slotItems[indexPath.row].isSelected.toggle()
-        tableView.reloadRows(at: [indexPath], with: .none)
+        let sectionKind = Section(rawValue: indexPath.section)
+        switch sectionKind {
+        case .slots:
+            slotItems[indexPath.row].isSelected.toggle()
+            tableView.reloadRows(at: [indexPath], with: .none)
+        default: return
+        }
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
