@@ -120,6 +120,12 @@ extension SlotViewController {
 extension SlotViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        if slotItems.isEmpty {
+            // TODO: - Implement localization...
+            tableView.createEmptyState(title: "No Food Data", message: "Tap the plus button to add item.")
+        } else {
+            tableView.restore()
+        }
         return Section.allCases.count
     }
     
