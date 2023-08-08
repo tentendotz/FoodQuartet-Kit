@@ -27,6 +27,7 @@
 		06A3214D2A50517E00F1B4C2 /* SlotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06A3214B2A50517E00F1B4C2 /* SlotCell.xib */; };
 		06A321572A50539200F1B4C2 /* SlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A321562A50539200F1B4C2 /* SlotViewController.swift */; };
 		06A321592A5054B100F1B4C2 /* MonthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A321582A5054B100F1B4C2 /* MonthPickerViewController.swift */; };
+		06A8F8902A811F6000399B31 /* UITableView+EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8F88F2A811F6000399B31 /* UITableView+EmptyState.swift */; };
 		06E13A0B2A7CD49F0084788E /* PlusButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E13A0A2A7CD49F0084788E /* PlusButtonCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		06A3214B2A50517E00F1B4C2 /* SlotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlotCell.xib; sourceTree = "<group>"; };
 		06A321562A50539200F1B4C2 /* SlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotViewController.swift; sourceTree = "<group>"; };
 		06A321582A5054B100F1B4C2 /* MonthPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPickerViewController.swift; sourceTree = "<group>"; };
+		06A8F88F2A811F6000399B31 /* UITableView+EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+EmptyState.swift"; sourceTree = "<group>"; };
 		06E13A0A2A7CD49F0084788E /* PlusButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButtonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				06515F8B2A78035100772B08 /* UIView+IBInspectable.swift */,
+				06A8F88F2A811F6000399B31 /* UITableView+EmptyState.swift */,
 				06180D422A508EC80052D1B3 /* UIColor+HexColor.swift */,
 				062554292A61905500AEF4F5 /* DateFormatter+MonthName.swift */,
 			);
@@ -253,6 +256,7 @@
 				06A321572A50539200F1B4C2 /* SlotViewController.swift in Sources */,
 				06180D432A508EC80052D1B3 /* UIColor+HexColor.swift in Sources */,
 				062554282A6036BE00AEF4F5 /* FoodBrain.swift in Sources */,
+				06A8F8902A811F6000399B31 /* UITableView+EmptyState.swift in Sources */,
 				06A3212F2A504BB300F1B4C2 /* AppDelegate.swift in Sources */,
 				06180D412A507C080052D1B3 /* SeasonButton.swift in Sources */,
 				06A321312A504BB300F1B4C2 /* SceneDelegate.swift in Sources */,
