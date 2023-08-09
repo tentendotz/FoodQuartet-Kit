@@ -17,12 +17,27 @@ class SlotViewController: UIViewController {
     @IBOutlet private weak var monthPickerButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
     
-    // MARK: - Properties and Sections
+    private lazy var plusButtonCell: PlusButtonCell = {
+        let cell = PlusButtonCell()
+        return cell
+    }()
+    
+    
+    // MARK: - Properties and Section Handling
     
     private var foodBrain = FoodBrain()
     
     var slotItems = [Food]()
     
+    private enum Section: Int, CaseIterable {
+        case slots = 0, bottom
+        func countItems(of items: [Food]) -> Int {
+            switch self {
+            case .slots: return items.count
+            case .bottom: return 1
+            }
+        }
+    }
 }
 
 
@@ -104,19 +119,40 @@ extension SlotViewController {
 
 extension SlotViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if slotItems.isEmpty {
+            // TODO: - Implement localization...
+            tableView.createEmptyState(title: "No Food Data", message: "Tap the plus button to add item.")
+        } else {
+            tableView.restore()
+        }
+        return Section.allCases.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return slotItems.count
+        let sectionKind = Section(rawValue: section)
+        return sectionKind?.countItems(of: slotItems) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.SlotVC.cellIdentifier, for: indexPath) as? SlotCell else {
-            fatalError("Unable to dequeue SlotCell")
+        guard let sectionKind = Section(rawValue: indexPath.section) else { return .init() }
+        
+        switch sectionKind {
+        case .slots:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: K.SlotVC.cellIdentifier, for: indexPath) as? SlotCell else {
+                fatalError("Unable to dequeue SlotCell")
+            }
+            let foodItem = slotItems[indexPath.row]
+            let configuredCell = applyConfiguration(cell, with: foodItem)
+            return configuredCell
+        case .bottom:
+            return plusButtonCell
         }
-        let foodItem = slotItems[indexPath.row]
-        let configuredCell = applyConfiguration(cell, with: foodItem)
-        return configuredCell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return Section(rawValue: indexPath.section) == .slots ? true : false
+    }
 }
 
 
@@ -124,20 +160,38 @@ extension SlotViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let cellHeight = CGFloat(88)
-        return slotItems.isEmpty ? 0 : cellHeight
+        let sectionKind = Section(rawValue: indexPath.section)
+        
+        switch sectionKind {
+        case .slots:
+            return slotItems.isEmpty ? 0 : cellHeight
+        default:
+            return UITableView.automaticDimension
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        slotItems[indexPath.row].isSelected.toggle()
-        tableView.reloadRows(at: [indexPath], with: .none)
+        let sectionKind = Section(rawValue: indexPath.section)
+        switch sectionKind {
+        case .slots:
+            slotItems[indexPath.row].isSelected.toggle()
+            tableView.reloadRows(at: [indexPath], with: .none)
+        default: return
+        }
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard let sectionKind = Section(rawValue: indexPath.section) else { return .init() }
+        
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, completionHandler in
-            self.slotItems[indexPath.row].isSelected = false
-            self.slotItems.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
-            completionHandler(true)
+            switch sectionKind {
+            case .slots:
+                self.slotItems[indexPath.row].isSelected = false
+                self.slotItems.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+                completionHandler(true)
+            default: completionHandler(false)
+            }
         }
         let swipeConfig = UISwipeActionsConfiguration(actions: [deleteAction])
         swipeConfig.performsFirstActionWithFullSwipe = true
