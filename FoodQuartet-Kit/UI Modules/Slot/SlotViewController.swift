@@ -29,6 +29,8 @@ class SlotViewController: UIViewController {
     
     var slotItems = [Food]()
     
+    private var currentFilters = [String]()
+    
     private enum Section: Int, CaseIterable {
         case slots = 0, bottom
         func countItems(of items: [Food]) -> Int {
