@@ -63,6 +63,7 @@ extension SlotViewController {
     // MARK: - User Interaction
     
     @IBAction private func seasonsPressed(_ sender: SeasonButton) {
+        let seasonName: String
         let seasonColor: UIColor?
         
         if sender.isSelected {
@@ -70,15 +71,20 @@ extension SlotViewController {
         } else {
             switch sender {
             case springButton:
+                seasonName = K.L10n.spring
                 seasonColor = UIColor.calculateColor(.springHex)
             case summerButton:
+                seasonName = K.L10n.summer
                 seasonColor = UIColor.calculateColor(.summerHex)
             case fallButton:
+                seasonName = K.L10n.fall
                 seasonColor = UIColor.calculateColor(.fallHex)
             case winterButton:
+                seasonName = K.L10n.winter
                 seasonColor = UIColor.calculateColor(.winterHex)
             default: return
             }
+            currentFilters = [seasonName]
             
             deselectAllSeasonButtons()
             sender.switchState(isSelected: true, backgroundColor: seasonColor)
