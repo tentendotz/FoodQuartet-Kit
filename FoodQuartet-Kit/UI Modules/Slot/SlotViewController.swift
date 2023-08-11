@@ -29,7 +29,12 @@ class SlotViewController: UIViewController {
     
     var slotItems = [Food]()
     
-    private var currentFilters = [String]()
+    private var currentFilters = [String]() {
+        didSet {
+            let newLabel = currentFilters.isEmpty ? K.L10n.noFilter : currentFilters.joined(separator: " & ")
+            currentFilterButton.configuration?.title = newLabel
+        }
+    }
     
     private enum Section: Int, CaseIterable {
         case slots = 0, bottom
