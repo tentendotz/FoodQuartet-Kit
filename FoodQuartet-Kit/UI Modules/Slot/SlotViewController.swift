@@ -33,6 +33,8 @@ class SlotViewController: UIViewController {
         didSet {
             let newLabel = currentFilters.isEmpty ? K.L10n.noFilter : currentFilters.joined(separator: " & ")
             currentFilterButton.configuration?.title = newLabel
+            
+            deselectAllSeasonButtons()
         }
     }
     
@@ -72,7 +74,6 @@ extension SlotViewController {
         let seasonColor: UIColor?
         
         if sender.isSelected {
-            sender.isSelected = false
             // Retain the buffer capacity for refilling the collection
             currentFilters.removeAll(keepingCapacity: true)
         } else {
@@ -92,8 +93,6 @@ extension SlotViewController {
             default: return
             }
             currentFilters = [seasonName]
-            
-            deselectAllSeasonButtons()
             sender.switchState(isSelected: true, backgroundColor: seasonColor)
         }
     }
