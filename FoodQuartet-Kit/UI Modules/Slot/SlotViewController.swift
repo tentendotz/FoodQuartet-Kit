@@ -73,6 +73,8 @@ extension SlotViewController {
         
         if sender.isSelected {
             sender.isSelected = false
+            // Retain the buffer capacity for refilling the collection
+            currentFilters.removeAll(keepingCapacity: true)
         } else {
             switch sender {
             case springButton:
