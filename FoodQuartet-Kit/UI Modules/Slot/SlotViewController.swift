@@ -9,7 +9,7 @@ import UIKit
 
 class SlotViewController: UIViewController {
     
-    @IBOutlet private weak var currentFilterButton: UIButton!
+    @IBOutlet private weak var filterButton: UIButton!
     @IBOutlet private weak var springButton: SeasonButton!
     @IBOutlet private weak var summerButton: SeasonButton!
     @IBOutlet private weak var fallButton: SeasonButton!
@@ -32,7 +32,7 @@ class SlotViewController: UIViewController {
     private var currentFilters = [String]() {
         didSet {
             let newLabel = currentFilters.isEmpty ? K.L10n.noFilter : currentFilters.joined(separator: " & ")
-            currentFilterButton.configuration?.title = newLabel
+            filterButton.configuration?.title = newLabel
             
             deselectAllSeasonButtons()
         }

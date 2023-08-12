@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hGc-EH-VJe">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -238,8 +237,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="FoodQuartet" id="IwC-V5-Vqw"/>
                     <connections>
-                        <outlet property="currentFilterButton" destination="pZj-su-BYm" id="0BU-MB-zmf"/>
                         <outlet property="fallButton" destination="Bsc-Vc-DR6" id="fCc-GY-bXd"/>
+                        <outlet property="filterButton" destination="pZj-su-BYm" id="0BU-MB-zmf"/>
                         <outlet property="monthPickerButton" destination="NYf-tK-sTb" id="btN-5i-TK8"/>
                         <outlet property="springButton" destination="JRf-bS-hRF" id="8hd-5y-7b6"/>
                         <outlet property="summerButton" destination="jS3-1c-aOx" id="09d-zv-fYk"/>
