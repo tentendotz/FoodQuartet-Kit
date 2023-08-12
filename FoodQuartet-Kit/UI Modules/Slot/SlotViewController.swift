@@ -97,7 +97,7 @@ extension SlotViewController {
         }
     }
     
-    @IBAction private func currentFilterPressed(_ sender: UIButton) {
+    @IBAction private func filterPressed(_ sender: UIButton) {
     }
     
     @IBAction private func changeItemsPressed(_ sender: UIButton) {

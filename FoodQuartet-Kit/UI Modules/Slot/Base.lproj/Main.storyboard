@@ -63,7 +63,7 @@
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="currentFilterPressed:" destination="11I-Ph-FKa" eventType="touchUpInside" id="qKP-fY-dc3"/>
+                                            <action selector="filterPressed:" destination="11I-Ph-FKa" eventType="touchUpInside" id="qKP-fY-dc3"/>
                                         </connections>
                                     </button>
                                 </subviews>
