@@ -10,6 +10,12 @@ import UIKit
 struct FoodBrain {
     
     lazy var items = generateFoods()
+    
+    mutating func filteredFoods(with activeRules: [String]) -> [Food] {
+        let filtered = items.filter { $0.harvestTime.isSuperset(of: activeRules) }
+        
+        return filtered
+    }
 }
 
 
