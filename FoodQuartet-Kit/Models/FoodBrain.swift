@@ -13,8 +13,12 @@ struct FoodBrain {
     
     mutating func filteredFoods(with activeRules: [String], limit: Int? = nil) -> [Food] {
         let filtered = items.filter { $0.harvestTime.isSuperset(of: activeRules) }
+
+        guard let maxLimit = limit else { return filtered }
+        let unselected = filtered.filter { !$0.isSelected }
+        let someUnselected = Array(unselected.prefix(maxLimit))
         
-        return filtered
+        return someUnselected
     }
 }
 
