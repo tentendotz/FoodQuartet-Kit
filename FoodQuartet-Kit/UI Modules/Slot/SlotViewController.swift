@@ -9,7 +9,7 @@ import UIKit
 
 class SlotViewController: UIViewController {
     
-    @IBOutlet private weak var currentFilterButton: UIButton!
+    @IBOutlet private weak var filterButton: UIButton!
     @IBOutlet private weak var springButton: SeasonButton!
     @IBOutlet private weak var summerButton: SeasonButton!
     @IBOutlet private weak var fallButton: SeasonButton!
@@ -28,6 +28,15 @@ class SlotViewController: UIViewController {
     private var foodBrain = FoodBrain()
     
     var slotItems = [Food]()
+    
+    private var userRules = [String]() {
+        didSet {
+            let newLabel = userRules.isEmpty ? K.L10n.noFilter : userRules.joined(separator: " & ")
+            filterButton.configuration?.title = newLabel
+            
+            deselectAllSeasonButtons()
+        }
+    }
     
     private enum Section: Int, CaseIterable {
         case slots = 0, bottom
@@ -61,29 +70,34 @@ extension SlotViewController {
     // MARK: - User Interaction
     
     @IBAction private func seasonsPressed(_ sender: SeasonButton) {
+        let seasonName: String
         let seasonColor: UIColor?
         
         if sender.isSelected {
-            sender.isSelected = false
+            // Retain the buffer capacity for refilling the collection
+            userRules.removeAll(keepingCapacity: true)
         } else {
             switch sender {
             case springButton:
+                seasonName = K.L10n.spring
                 seasonColor = UIColor.calculateColor(.springHex)
             case summerButton:
+                seasonName = K.L10n.summer
                 seasonColor = UIColor.calculateColor(.summerHex)
             case fallButton:
+                seasonName = K.L10n.fall
                 seasonColor = UIColor.calculateColor(.fallHex)
             case winterButton:
+                seasonName = K.L10n.winter
                 seasonColor = UIColor.calculateColor(.winterHex)
             default: return
             }
-            
-            deselectAllSeasonButtons()
+            userRules = [seasonName]
             sender.switchState(isSelected: true, backgroundColor: seasonColor)
         }
     }
     
-    @IBAction private func currentFilterPressed(_ sender: UIButton) {
+    @IBAction private func filterPressed(_ sender: UIButton) {
     }
     
     @IBAction private func changeItemsPressed(_ sender: UIButton) {
