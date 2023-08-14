@@ -29,9 +29,9 @@ class SlotViewController: UIViewController {
     
     var slotItems = [Food]()
     
-    private var currentFilters = [String]() {
+    private var userRules = [String]() {
         didSet {
-            let newLabel = currentFilters.isEmpty ? K.L10n.noFilter : currentFilters.joined(separator: " & ")
+            let newLabel = userRules.isEmpty ? K.L10n.noFilter : userRules.joined(separator: " & ")
             filterButton.configuration?.title = newLabel
             
             deselectAllSeasonButtons()
@@ -75,7 +75,7 @@ extension SlotViewController {
         
         if sender.isSelected {
             // Retain the buffer capacity for refilling the collection
-            currentFilters.removeAll(keepingCapacity: true)
+            userRules.removeAll(keepingCapacity: true)
         } else {
             switch sender {
             case springButton:
@@ -92,7 +92,7 @@ extension SlotViewController {
                 seasonColor = UIColor.calculateColor(.winterHex)
             default: return
             }
-            currentFilters = [seasonName]
+            userRules = [seasonName]
             sender.switchState(isSelected: true, backgroundColor: seasonColor)
         }
     }
