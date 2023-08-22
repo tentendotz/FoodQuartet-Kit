@@ -101,8 +101,10 @@ extension SlotViewController {
     }
     
     @IBAction private func changeItemsPressed(_ sender: UIButton) {
+        if slotItems.isEmpty { return }
+        performQuery()
     }
-        
+    
     /*
     // MARK: - Navigation
 
@@ -125,6 +127,14 @@ extension SlotViewController {
         summerButton.isSelected = false
         fallButton.isSelected = false
         winterButton.isSelected = false
+    }
+    
+    private func performQuery() {
+        let selected = slotItems.filter { $0.isSelected }
+        let filtered = foodBrain.filteredFoods(with: userRules)
+        slotItems = selected + filtered
+        
+        tableView.reloadData()
     }
 }
 
