@@ -129,12 +129,16 @@ extension SlotViewController {
         winterButton.isSelected = false
     }
     
-    private func performQuery() {
-        let selected = slotItems.filter { $0.isSelected }
-        let filtered = foodBrain.filteredFoods(with: userRules)
-        slotItems = selected + filtered
-        
-        tableView.reloadData()
+    private func performQuery(addition: Int? = nil) {
+        if let numberOfAddition = addition {
+            
+        } else {
+            let selected = slotItems.filter { $0.isSelected }
+            let filtered = foodBrain.filteredFoods(with: userRules)
+            slotItems = selected + filtered
+            
+            tableView.reloadData()
+        }
     }
 }
 
