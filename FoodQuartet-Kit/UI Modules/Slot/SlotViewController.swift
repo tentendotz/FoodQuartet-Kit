@@ -131,6 +131,12 @@ extension SlotViewController {
     
     private func performQuery(addition: Int? = nil) {
         if let numberOfAddition = addition {
+            let newItems = foodBrain.filteredFoods(with: userRules, limit: numberOfAddition)
+            slotItems.append(contentsOf: newItems)
+            
+            let newRange = slotItems.count - numberOfAddition ..< slotItems.count
+            let indexPaths = newRange.map { IndexPath(row: $0, section: Section.slots.rawValue) }
+            tableView.insertRows(at: indexPaths, with: .fade)
             
         } else {
             let selected = slotItems.filter { $0.isSelected }
