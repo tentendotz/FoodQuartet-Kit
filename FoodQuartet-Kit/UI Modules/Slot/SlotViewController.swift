@@ -19,6 +19,11 @@ class SlotViewController: UIViewController {
     
     private lazy var plusButtonCell: PlusButtonCell = {
         let cell = PlusButtonCell()
+        let action = UIAction { [weak self] _ in
+            // Just 1 item append to slotItems array.
+            self?.performQuery(addition: 1)
+        }
+        cell.button.addAction(action, for: .touchUpInside)
         return cell
     }()
     
