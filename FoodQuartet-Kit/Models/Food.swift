@@ -7,8 +7,9 @@
 
 import UIKit
 
-final class Food {
+final class Food: Equatable {
     
+    let id = UUID()
     let name: String
     let color: UIColor
     let group: Kind
@@ -20,6 +21,10 @@ final class Food {
         self.color = color
         self.group = group
         self.harvestTime = harvestTime
+    }
+    
+    static func == (lhs: Food, rhs: Food) -> Bool {
+        return lhs.id == rhs.id
     }
 }
 
