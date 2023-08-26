@@ -12,9 +12,11 @@ struct FoodBrain {
     lazy var items = generateFoods()
     
     mutating func filteredFoods(with activeRules: [String], except blockList: [Food]? = nil, limit: Int? = nil) -> [Food] {
-        let filtered = items.filter { $0.harvestTime.isSuperset(of: activeRules) }
+        var filtered = items.filter { $0.harvestTime.isSuperset(of: activeRules) }
         
-        
+        if let blockedItems = blockList {
+            filtered = filtered.filter { !blockedItems.contains($0) }
+        }
         
         guard let maxLimit = limit else { return filtered }
         let unselected = filtered.filter { !$0.isSelected }
