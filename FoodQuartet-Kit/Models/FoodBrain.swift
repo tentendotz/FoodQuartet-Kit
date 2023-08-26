@@ -19,10 +19,9 @@ struct FoodBrain {
         }
         
         guard let maxLimit = limit else { return filtered }
-        let unselected = filtered.filter { !$0.isSelected }
-        let someUnselected = Array(unselected.prefix(maxLimit))
         
-        return someUnselected
+        let someAllowed = Array(filtered.prefix(maxLimit))
+        return someAllowed
     }
 }
 
