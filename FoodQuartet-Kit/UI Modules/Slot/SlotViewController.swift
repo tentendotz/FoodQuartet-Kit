@@ -137,7 +137,7 @@ extension SlotViewController {
     private func performQuery(addition: Int? = nil) {
         if let numberOfAddition = addition {
             // FIXME: - Generating the same items every time
-            let newItems = foodBrain.filteredFoods(with: userRules, limit: numberOfAddition)
+            let newItems = foodBrain.filteredFoods(with: userRules, except: slotItems, limit: numberOfAddition)
             slotItems.append(contentsOf: newItems)
             
             let newRange = slotItems.count - numberOfAddition ..< slotItems.count
@@ -146,7 +146,7 @@ extension SlotViewController {
             
         } else {
             let selected = slotItems.filter { $0.isSelected }
-            let filtered = foodBrain.filteredFoods(with: userRules)
+            let filtered = foodBrain.filteredFoods(with: userRules, except: selected, limit: slotItems.count - selected.count)
             slotItems = selected + filtered
             
             tableView.reloadData()
