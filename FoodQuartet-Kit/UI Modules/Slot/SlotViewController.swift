@@ -136,7 +136,6 @@ extension SlotViewController {
     
     private func performQuery(addition: Int? = nil) {
         if let numberOfAddition = addition {
-            // FIXME: - Generating the same items every time
             let newItems = foodBrain.filteredFoods(with: userRules, except: slotItems, limit: numberOfAddition)
             slotItems.append(contentsOf: newItems)
             
