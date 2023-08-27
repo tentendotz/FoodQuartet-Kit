@@ -18,9 +18,10 @@ struct FoodBrain {
             filtered = filtered.filter { !blockedItems.contains($0) }
         }
         
-        guard let maxLimit = limit else { return filtered }
+        let shuffled = filtered.shuffled()
+        guard let maxLimit = limit else { return shuffled }
         
-        let someAllowed = Array(filtered.prefix(maxLimit))
+        let someAllowed = Array(shuffled.prefix(maxLimit))
         return someAllowed
     }
 }
