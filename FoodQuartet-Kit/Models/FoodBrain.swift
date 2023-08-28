@@ -21,6 +21,9 @@ struct FoodBrain {
         let shuffled = filtered.shuffled()
         guard let maxLimit = limit else { return shuffled }
         
+        // If the assertion fails, it is possible that the filtered items are too restricted.
+        assert(shuffled.count >= maxLimit, "The item count is insufficient.")
+        
         let someAllowed = Array(shuffled.prefix(maxLimit))
         return someAllowed
     }
