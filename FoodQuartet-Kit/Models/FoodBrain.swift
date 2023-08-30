@@ -10,6 +10,23 @@ import UIKit
 struct FoodBrain {
     
     lazy var items = generateFoods()
+    
+    mutating func filteredFoods(with activeRules: [String], except blockList: [Food]? = nil, limit: Int? = nil) -> [Food] {
+        var filtered = items.filter { $0.harvestTime.isSuperset(of: activeRules) }
+        
+        if let blockedItems = blockList {
+            filtered = filtered.filter { !blockedItems.contains($0) }
+        }
+        
+        let shuffled = filtered.shuffled()
+        guard let maxLimit = limit else { return shuffled }
+        
+        // If the assertion fails, it is possible that the filtered items are too restricted.
+        assert(shuffled.count >= maxLimit, "The item count is insufficient.")
+        
+        let someAllowed = Array(shuffled.prefix(maxLimit))
+        return someAllowed
+    }
 }
 
 

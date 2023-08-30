@@ -7,8 +7,9 @@
 
 import UIKit
 
-final class Food {
+final class Food: Hashable {
     
+    let id = UUID()
     let name: String
     let color: UIColor
     let group: Kind
@@ -20,6 +21,17 @@ final class Food {
         self.color = color
         self.group = group
         self.harvestTime = harvestTime
+    }
+    
+    
+    // MARK: - Conforming to the Hashable
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: Food, rhs: Food) -> Bool {
+        return lhs.id == rhs.id
     }
 }
 

@@ -19,6 +19,11 @@ class SlotViewController: UIViewController {
     
     private lazy var plusButtonCell: PlusButtonCell = {
         let cell = PlusButtonCell()
+        let action = UIAction { [weak self] _ in
+            // Just 1 item append to slotItems array.
+            self?.performQuery(addition: 1)
+        }
+        cell.button.addAction(action, for: .touchUpInside)
         return cell
     }()
     
@@ -57,8 +62,6 @@ extension SlotViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: - Replace all food items with actual data source in the future...
-        slotItems.append(contentsOf: foodBrain.items)
         
         
         tableView.dataSource = self
@@ -101,8 +104,10 @@ extension SlotViewController {
     }
     
     @IBAction private func changeItemsPressed(_ sender: UIButton) {
+        if slotItems.isEmpty { return }
+        performQuery()
     }
-        
+    
     /*
     // MARK: - Navigation
 
@@ -125,6 +130,24 @@ extension SlotViewController {
         summerButton.isSelected = false
         fallButton.isSelected = false
         winterButton.isSelected = false
+    }
+    
+    private func performQuery(addition: Int? = nil) {
+        if let numberOfAddition = addition {
+            let newItems = foodBrain.filteredFoods(with: userRules, except: slotItems, limit: numberOfAddition)
+            slotItems.append(contentsOf: newItems)
+            
+            let newRange = slotItems.count - numberOfAddition ..< slotItems.count
+            let indexPaths = newRange.map { IndexPath(row: $0, section: Section.slots.rawValue) }
+            tableView.insertRows(at: indexPaths, with: .fade)
+            
+        } else {
+            let selected = slotItems.filter { $0.isSelected }
+            let filtered = foodBrain.filteredFoods(with: userRules, except: selected, limit: slotItems.count - selected.count)
+            slotItems = selected + filtered
+            
+            tableView.reloadData()
+        }
     }
 }
 
