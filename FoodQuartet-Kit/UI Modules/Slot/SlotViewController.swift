@@ -32,7 +32,13 @@ class SlotViewController: UIViewController {
     
     private var foodBrain = FoodBrain()
     
-    var slotItems = [Food]()
+    var slotItems = [Food]() {
+        didSet {
+            guard slotItems.count != oldValue.count else { return }
+            evaluatePlusButtonState()
+        }
+    }
+
     
     private var userRules = [String]() {
         didSet {
@@ -40,6 +46,7 @@ class SlotViewController: UIViewController {
             filterButton.configuration?.title = newLabel
             
             deselectAllSeasonButtons()
+            evaluatePlusButtonState()
         }
     }
     
