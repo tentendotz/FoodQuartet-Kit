@@ -143,10 +143,10 @@ extension SlotViewController {
         let maximumLimit = 5
         let totalFoodCount = foodBrain.filteredFoods(with: userRules).count
         
-        if totalFoodCount <= slotItems.count {
-            plusButtonCell.isEnabled = false
+        if slotItems.count < maximumLimit && slotItems.count < totalFoodCount {
+            plusButtonCell.isEnabled = true
         } else {
-            plusButtonCell.isEnabled = slotItems.count < maximumLimit ? true : false
+            plusButtonCell.isEnabled = false
         }
     }
     
