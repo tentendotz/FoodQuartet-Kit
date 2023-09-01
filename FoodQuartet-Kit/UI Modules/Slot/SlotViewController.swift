@@ -132,6 +132,17 @@ extension SlotViewController {
         winterButton.isSelected = false
     }
     
+    private func evaluatePlusButtonState() {
+        let maximumLimit = 5
+        let totalFoodCount = foodBrain.filteredFoods(with: userRules).count
+        
+        if totalFoodCount <= slotItems.count {
+            plusButtonCell.isEnabled = false
+        } else {
+            plusButtonCell.isEnabled = slotItems.count < maximumLimit ? true : false
+        }
+    }
+    
     private func performQuery(addition: Int? = nil) {
         if let numberOfAddition = addition {
             let newItems = foodBrain.filteredFoods(with: userRules, except: slotItems, limit: numberOfAddition)
