@@ -32,7 +32,13 @@ class SlotViewController: UIViewController {
     
     private var foodBrain = FoodBrain()
     
-    var slotItems = [Food]()
+    var slotItems = [Food]() {
+        didSet {
+            guard slotItems.count != oldValue.count else { return }
+            evaluatePlusButtonState()
+        }
+    }
+
     
     private var userRules = [String]() {
         didSet {
@@ -40,6 +46,7 @@ class SlotViewController: UIViewController {
             filterButton.configuration?.title = newLabel
             
             deselectAllSeasonButtons()
+            evaluatePlusButtonState()
         }
     }
     
@@ -130,6 +137,17 @@ extension SlotViewController {
         summerButton.isSelected = false
         fallButton.isSelected = false
         winterButton.isSelected = false
+    }
+    
+    private func evaluatePlusButtonState() {
+        let maximumLimit = 5
+        let totalFoodCount = foodBrain.filteredFoods(with: userRules).count
+        
+        if slotItems.count < maximumLimit && slotItems.count < totalFoodCount {
+            plusButtonCell.isEnabled = true
+        } else {
+            plusButtonCell.isEnabled = false
+        }
     }
     
     private func performQuery(addition: Int? = nil) {
