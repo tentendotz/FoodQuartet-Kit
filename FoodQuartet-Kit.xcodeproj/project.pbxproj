@@ -57,6 +57,7 @@
 		06A321582A5054B100F1B4C2 /* MonthPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPickerViewController.swift; sourceTree = "<group>"; };
 		06A8F88F2A811F6000399B31 /* UITableView+EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+EmptyState.swift"; sourceTree = "<group>"; };
 		06BA49A02AA4ACB80061CCD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		06BA49A22AA4B6910061CCD0 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		06E13A0A2A7CD49F0084788E /* PlusButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButtonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,8 +167,8 @@
 		06A321532A5052D800F1B4C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				06BA49A12AA4ACB80061CCD0 /* Localizable.strings */,
 				06A321372A504BB600F1B4C2 /* Assets.xcassets */,
+				06BA49A12AA4ACB80061CCD0 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -224,6 +225,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 06A321222A504BB300F1B4C2;
 			productRefGroup = 06A3212C2A504BB300F1B4C2 /* Products */;
@@ -299,6 +301,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				06BA49A02AA4ACB80061CCD0 /* en */,
+				06BA49A22AA4B6910061CCD0 /* ja */,
 			);
 			name = Localizable.strings;
 			path = "FoodQuartet-Kit/Models";
@@ -311,6 +314,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -371,6 +375,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
