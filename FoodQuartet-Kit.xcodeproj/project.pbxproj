@@ -28,6 +28,7 @@
 		06A321572A50539200F1B4C2 /* SlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A321562A50539200F1B4C2 /* SlotViewController.swift */; };
 		06A321592A5054B100F1B4C2 /* MonthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A321582A5054B100F1B4C2 /* MonthPickerViewController.swift */; };
 		06A8F8902A811F6000399B31 /* UITableView+EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8F88F2A811F6000399B31 /* UITableView+EmptyState.swift */; };
+		06BA499F2AA4ACB80061CCD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06BA49A12AA4ACB80061CCD0 /* Localizable.strings */; };
 		06E13A0B2A7CD49F0084788E /* PlusButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E13A0A2A7CD49F0084788E /* PlusButtonCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		06A321562A50539200F1B4C2 /* SlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotViewController.swift; sourceTree = "<group>"; };
 		06A321582A5054B100F1B4C2 /* MonthPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPickerViewController.swift; sourceTree = "<group>"; };
 		06A8F88F2A811F6000399B31 /* UITableView+EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+EmptyState.swift"; sourceTree = "<group>"; };
+		06BA49A02AA4ACB80061CCD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		06E13A0A2A7CD49F0084788E /* PlusButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButtonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +166,7 @@
 		06A321532A5052D800F1B4C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				06BA49A12AA4ACB80061CCD0 /* Localizable.strings */,
 				06A321372A504BB600F1B4C2 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -240,6 +243,7 @@
 				06180D372A5055640052D1B3 /* WebSearch.storyboard in Resources */,
 				06A3213B2A504BB600F1B4C2 /* LaunchScreen.storyboard in Resources */,
 				06A3214D2A50517E00F1B4C2 /* SlotCell.xib in Resources */,
+				06BA499F2AA4ACB80061CCD0 /* Localizable.strings in Resources */,
 				06A321432A504E1C00F1B4C2 /* MonthPicker.storyboard in Resources */,
 				06A321382A504BB600F1B4C2 /* Assets.xcassets in Resources */,
 				06A321362A504BB300F1B4C2 /* Main.storyboard in Resources */,
@@ -290,6 +294,15 @@
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
+		};
+		06BA49A12AA4ACB80061CCD0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06BA49A02AA4ACB80061CCD0 /* en */,
+			);
+			name = Localizable.strings;
+			path = "FoodQuartet-Kit/Models";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXVariantGroup section */
 
