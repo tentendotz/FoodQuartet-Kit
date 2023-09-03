@@ -5,3 +5,39 @@
   Created by tetsuta matsuyama on 2023/09/03.
   
 */
+
+// Food Kind
+"type_vegetable" = "野菜類";
+"type_mushroom" = "きのこ類";
+"type_seafood" = "魚介類";
+"type_meat" = "肉類";
+"type_fruit" = "果実類";
+"type_others" = "その他";
+
+// Four Seasons Filter
+"type_no_filter" = "全ての食材";
+"type_spring" = "春 (3月,4月,5月)";
+"type_summer" = "夏 (6月,7月,8月)";
+"type_fall" = "秋 (9月,10月,11月)";
+"type_winter" = "冬 (12月,1月,2月)";
+
+// Action Button
+"action_back" = "戻る";
+"action_delete" = "削除";
+"action_reset" = "解除";
+"action_ok" = "OK";
+"action_cancel" = "キャンセル";
+
+// SlotVC
+"title_no_data" = "食材データが見つかりません";
+"message_tap_plusButton" = "＋ボタンをタップしてください。";
+"title_not_found" = "該当するデータがありません";
+"message_change_filter" = "もう一度試すか、フィルター条件を変更してください。";
+"message_plusButton_disabled" = "これ以上の食材を追加できません";
+"title_all_pinned" = "食材を変更できません";
+"message_deselect_item" = "食材の選択を解除してください。";
+"title_ask_reset" = "絞り込み条件を解除しますか？";
+
+
+// Dynamic String
+"label_dynamic_rate" = "%@/4 seasons";
