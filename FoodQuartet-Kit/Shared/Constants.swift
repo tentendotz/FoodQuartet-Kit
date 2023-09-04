@@ -85,7 +85,13 @@ extension K {
         static let deselectItem = L10n.localized("message_deselect_item")
         static let askReset = L10n.localized("title_ask_reset")
         
-                
+        
+        // Dynamic String
+        static func rateOfSeasons(with numerator: String) -> String {
+            return L10n.localized("label_dynamic_rate", numerator)
+        }
+        
+        
         // MARK: - Localization Helper
         
         private static func localized(_ key: String, _ args: CVarArg...) -> String {

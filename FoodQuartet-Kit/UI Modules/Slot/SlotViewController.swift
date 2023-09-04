@@ -260,8 +260,7 @@ extension SlotViewController {
     
     private func applyConfiguration(_ cell: SlotCell, with foodItem: Food) -> SlotCell {
         let itemSeasons = foodItem.retrieveSeasons()
-        let format = "%@/4 seasons"
-        let countLabel = String(format: format, itemSeasons.count.description)
+        let countLabel = K.L10n.rateOfSeasons(with: itemSeasons.count.description)
         
         cell.configureCell(title: foodItem.name, color: foodItem.color, isSelected: foodItem.isSelected)
         cell.configureSeasonIcons(
