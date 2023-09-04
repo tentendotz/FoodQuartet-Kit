@@ -176,8 +176,7 @@ extension SlotViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if slotItems.isEmpty {
-            // TODO: - Implement localization...
-            tableView.createEmptyState(title: "No Food Data", message: "Tap the plus button to add item.")
+            tableView.createEmptyState(title: K.L10n.noData, message: K.L10n.tapPlusButton)
         } else {
             tableView.restore()
         }
@@ -238,7 +237,7 @@ extension SlotViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         guard let sectionKind = Section(rawValue: indexPath.section) else { return .init() }
         
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, completionHandler in
+        let deleteAction = UIContextualAction(style: .destructive, title: K.L10n.delete) { _, _, completionHandler in
             switch sectionKind {
             case .slots:
                 self.slotItems[indexPath.row].isSelected = false

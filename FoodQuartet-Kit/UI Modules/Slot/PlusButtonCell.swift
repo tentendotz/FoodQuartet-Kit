@@ -65,8 +65,7 @@ extension PlusButtonCell {
             } else {
                 button.isUserInteractionEnabled = false
                 config.image = UIImage(systemName: "rectangle.and.hand.point.up.left.filled", withConfiguration: symbolConfig)
-                // TODO: - Implement localization...
-                config.title = "No more available items."
+                config.title = K.L10n.plusButtonDisabled
                 config.baseForegroundColor = UIColor.tertiaryLabel
                 config.baseBackgroundColor = UIColor.clear
                 config.buttonSize = .small

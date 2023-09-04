@@ -55,15 +55,14 @@ extension Food {
             }
         }
         
-        // TODO: - Implement localization...
         var localized: String {
             switch self {
-            case .vegetable: return "Vegetable"
-            case .mushroom: return "Mushroom"
-            case .seafood: return "Seafood"
-            case .meat: return "Meat"
-            case .fruit: return "Fruit"
-            case .others: return "Others"
+            case .vegetable: return K.L10n.vegetable
+            case .mushroom: return K.L10n.mushroom
+            case .seafood: return K.L10n.seafood
+            case .meat: return K.L10n.meat
+            case .fruit: return K.L10n.fruit
+            case .others: return K.L10n.others
             }
         }
     }
