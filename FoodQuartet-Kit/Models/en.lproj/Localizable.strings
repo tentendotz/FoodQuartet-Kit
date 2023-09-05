@@ -41,3 +41,19 @@
 
 // Dynamic String
 "label_dynamic_rate" = "%@/4 seasons";
+
+
+//MARK: - Food Data
+
+"name_burdock" = "Edible Burdock";
+"name_cabbage" = "Cabbage";
+"name_cauliflower" = "Cauliflower";
+"name_celery" = "Celery";
+"name_corn" = "Corn";
+"name_eggplant" = "Eggplant";
+"name_pacific_saury" = "Pacific Saury";
+"name_potato" = "Potato";
+"name_squash" = "Squash";
+"name_sweet_potato" = "Sweet Potato";
+"name_tuna" = "Tuna";
+"name_zucchini" = "Zucchini";

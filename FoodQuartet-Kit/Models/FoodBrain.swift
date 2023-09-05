@@ -40,7 +40,7 @@ extension FoodBrain {
         
         for line in components {
             let foodData = line.split(separator: "/")
-            let name = String(foodData[0])
+            let name = NSLocalizedString(String(foodData[0]), comment: "")
             let hex = String(foodData[1])
             let group = Food.Kind(alias: foodData[2])
             let rawNumbers = foodData[3].split(separator: ",").compactMap { Int($0) }

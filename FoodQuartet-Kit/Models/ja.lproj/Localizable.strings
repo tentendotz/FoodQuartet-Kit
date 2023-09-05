@@ -41,3 +41,19 @@
 
 // Dynamic String
 "label_dynamic_rate" = "%@/4 seasons";
+
+
+//MARK: - Food Data
+
+"name_burdock" = "ごぼう";
+"name_cabbage" = "キャベツ";
+"name_cauliflower" = "カリフラワー";
+"name_celery" = "セロリ";
+"name_corn" = "とうもろこし";
+"name_eggplant" = "なす";
+"name_pacific_saury" = "さんま";
+"name_potato" = "じゃがいも";
+"name_squash" = "かぼちゃ";
+"name_sweet_potato" = "さつまいも";
+"name_tuna" = "マグロ";
+"name_zucchini" = "ズッキーニ";
