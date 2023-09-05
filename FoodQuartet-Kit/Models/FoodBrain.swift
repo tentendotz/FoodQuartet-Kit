@@ -46,7 +46,7 @@ extension FoodBrain {
             let rawNumbers = foodData[3].split(separator: ",").compactMap { Int($0) }
             
             let color = UIColor(hexString: hex) ?? {
-                print("\(name)'s \(hex) is an invalid value.")
+                assertionFailure("\(name)'s \(hex) is an invalid value.")
                 
                 switch group {
                 case .vegetable: return UIColor.calculateColor(.vegetableHex)
