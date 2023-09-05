@@ -19,5 +19,8 @@ name_potato/#A2845E/veg/5,6,10,11
 name_squash/#E25809/veg/7,8,9,10,11,12
 name_sweet_potato/#BB8DCD/veg/1,9,10,11,12
 name_tuna/#34495E/fish/1,6,7,8,9,10,11,12
-name_zucchini/#0F6D5B/veg/6,7,8,9
+name_green_peas/#769E17/veg/3,4,5
+name_onion/#F7DD78/veg/3,4,5,6
+name_tomato/#E74C3C/veg/3,4,5,6,7,8
+name_mackerel/#65768F/fish/1,2,10,11,12
 """
