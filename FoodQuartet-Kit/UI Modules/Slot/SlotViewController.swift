@@ -108,6 +108,13 @@ extension SlotViewController {
     }
     
     @IBAction private func filterPressed(_ sender: UIButton) {
+        if userRules.isEmpty { return }
+        
+        let resetAction = UIAlertAction(title: K.L10n.reset, style: .destructive) { _ in
+            self.userRules.removeAll(keepingCapacity: true)
+        }
+        let cancelAction = UIAlertAction(title: K.L10n.cancel, style: .default)
+        displayAlert(title: K.L10n.askReset, message: "", actions: [cancelAction, resetAction])
     }
     
     @IBAction private func changeItemsPressed(_ sender: UIButton) {
