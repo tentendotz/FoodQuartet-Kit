@@ -120,12 +120,11 @@ extension SlotViewController {
     @IBAction private func changeItemsPressed(_ sender: UIButton) {
         if slotItems.isEmpty { return }
         
-        guard !slotItems.allSatisfy({ $0.isSelected }) else {
+        guard slotItems.contains(where: { !$0.isSelected }) else {
             let okAction = UIAlertAction(title: K.L10n.ok, style: .default)
             displayAlert(title: K.L10n.allPinned, message: K.L10n.deselectItem, actions: [okAction])
             return
         }
-        
         performQuery()
     }
     
