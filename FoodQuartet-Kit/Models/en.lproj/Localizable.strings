@@ -1,0 +1,62 @@
+/* 
+  Localizable.strings
+  FoodQuartet-Kit
+
+  Created by tetsuta matsuyama on 2023/09/03.
+  
+*/
+
+// Food Kind
+"type_vegetable" = "Vegetable";
+"type_mushroom" = "Mushroom";
+"type_seafood" = "Seafood";
+"type_meat" = "Meat";
+"type_fruit" = "Fruit";
+"type_others" = "Others";
+
+// Four Seasons Filter
+"type_no_filter" = "No Filter";
+"type_spring" = "Spring (MAR. APR. MAY)";
+"type_summer" = "Summer (JUN. JUL. AUG.)";
+"type_fall" = "Fall (SEP. OCT. NOV.)";
+"type_winter" = "Winter (DEC. JAN. FEB.)";
+
+// Action Button
+"action_back" = "Back";
+"action_delete" = "Delete";
+"action_reset" = "Reset";
+"action_ok" = "OK";
+"action_cancel" = "Cancel";
+
+// SlotVC
+"title_no_data" = "No Food Data";
+"message_tap_plusButton" = "Tap the plus button to add item.";
+"title_not_found" = "Not found";
+"message_change_filter" = "Please try different filter criteria.";
+"message_plusButton_disabled" = "No more available items.";
+"title_all_pinned" = "All items are pinned";
+"message_deselect_item" = "Deselect the item to perform the change button.";
+"title_ask_reset" = "Do you reset current filter?";
+
+
+// Dynamic String
+"label_dynamic_rate" = "%@/4 seasons";
+
+
+//MARK: - Food Data
+
+"name_burdock" = "Edible Burdock";
+"name_cabbage" = "Cabbage";
+"name_cauliflower" = "Cauliflower";
+"name_celery" = "Celery";
+"name_corn" = "Corn";
+"name_eggplant" = "Eggplant";
+"name_pacific_saury" = "Pacific Saury";
+"name_potato" = "Potato";
+"name_squash" = "Squash";
+"name_sweet_potato" = "Sweet Potato";
+"name_tuna" = "Tuna";
+"name_green_peas" = "Green Peas";
+"name_onion" = "Onion";
+"name_tomato" = "Tomato";
+"name_mackerel" = "Mackerel";

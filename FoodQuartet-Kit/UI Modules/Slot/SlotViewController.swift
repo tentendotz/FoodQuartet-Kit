@@ -68,8 +68,8 @@ extension SlotViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        // HACK: Provisionally initialize for localized filter button label
+        userRules = []
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -108,10 +108,23 @@ extension SlotViewController {
     }
     
     @IBAction private func filterPressed(_ sender: UIButton) {
+        if userRules.isEmpty { return }
+        
+        let resetAction = UIAlertAction(title: K.L10n.reset, style: .destructive) { _ in
+            self.userRules.removeAll(keepingCapacity: true)
+        }
+        let cancelAction = UIAlertAction(title: K.L10n.cancel, style: .default)
+        displayAlert(title: K.L10n.askReset, message: "", actions: [cancelAction, resetAction])
     }
     
     @IBAction private func changeItemsPressed(_ sender: UIButton) {
         if slotItems.isEmpty { return }
+        
+        guard slotItems.contains(where: { !$0.isSelected }) else {
+            let okAction = UIAlertAction(title: K.L10n.ok, style: .default)
+            displayAlert(title: K.L10n.allPinned, message: K.L10n.deselectItem, actions: [okAction])
+            return
+        }
         performQuery()
     }
     
@@ -176,8 +189,7 @@ extension SlotViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if slotItems.isEmpty {
-            // TODO: - Implement localization...
-            tableView.createEmptyState(title: "No Food Data", message: "Tap the plus button to add item.")
+            tableView.createEmptyState(title: K.L10n.noData, message: K.L10n.tapPlusButton)
         } else {
             tableView.restore()
         }
@@ -238,7 +250,7 @@ extension SlotViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         guard let sectionKind = Section(rawValue: indexPath.section) else { return .init() }
         
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, completionHandler in
+        let deleteAction = UIContextualAction(style: .destructive, title: K.L10n.delete) { _, _, completionHandler in
             switch sectionKind {
             case .slots:
                 self.slotItems[indexPath.row].isSelected = false
@@ -261,8 +273,7 @@ extension SlotViewController {
     
     private func applyConfiguration(_ cell: SlotCell, with foodItem: Food) -> SlotCell {
         let itemSeasons = foodItem.retrieveSeasons()
-        let format = "%@/4 seasons"
-        let countLabel = String(format: format, itemSeasons.count.description)
+        let countLabel = K.L10n.rateOfSeasons(with: itemSeasons.count.description)
         
         cell.configureCell(title: foodItem.name, color: foodItem.color, isSelected: foodItem.isSelected)
         cell.configureSeasonIcons(
