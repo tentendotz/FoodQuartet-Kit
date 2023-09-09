@@ -68,8 +68,8 @@ extension SlotViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        // HACK: Provisionally initialize for localized filter button label
+        userRules = []
         
         tableView.dataSource = self
         tableView.delegate = self
