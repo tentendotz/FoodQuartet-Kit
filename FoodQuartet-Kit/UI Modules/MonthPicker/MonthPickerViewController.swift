@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MonthPickerViewController: UIViewController {
+final class MonthPickerViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
 

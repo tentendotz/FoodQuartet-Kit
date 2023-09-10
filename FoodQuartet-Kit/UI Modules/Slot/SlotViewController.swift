@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SlotViewController: UIViewController {
+final class SlotViewController: UIViewController {
     
     @IBOutlet private weak var filterButton: UIButton!
     @IBOutlet private weak var springButton: SeasonButton!

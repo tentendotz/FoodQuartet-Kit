@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WebSearchViewController: UIViewController {
+final class WebSearchViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
 
