@@ -17,12 +17,32 @@ final class WebSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(WebSearchCell.self, forCellReuseIdentifier: K.WebSearchVC.cellIdentifier)
     }
     
     
     // MARK: - User Interaction
     
     @IBAction private func safariPressed(_ sender: UIButton) {
+    }
+}
+
+
+// MARK: - UITableViewDataSource & UITableViewDelegate
+
+extension WebSearchViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return currentItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.WebSearchVC.cellIdentifier, for: indexPath) as? WebSearchCell else {
+            fatalError("Unable to dequeue WebSearchCell")
+        }
+        
+        return cell
     }
 }
