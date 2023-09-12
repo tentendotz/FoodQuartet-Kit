@@ -42,6 +42,9 @@ extension WebSearchViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: K.WebSearchVC.cellIdentifier, for: indexPath) as? WebSearchCell else {
             fatalError("Unable to dequeue WebSearchCell")
         }
+        let foodName = currentItems[indexPath.row].name
+        let foodGroup = "(\(currentItems[indexPath.row].group.localized))"
+        cell.configureCell(title: foodName, secondaryTitle: foodGroup)
         
         return cell
     }
