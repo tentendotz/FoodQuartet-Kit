@@ -10,7 +10,10 @@ import UIKit
 final class WebSearchViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
-
+    var currentItems = [Food]()
+    
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
