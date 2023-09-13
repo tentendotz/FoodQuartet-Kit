@@ -35,6 +35,12 @@ final class WebSearchViewController: UIViewController {
 extension WebSearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if currentItems.isEmpty {
+            // TODO: - Localization
+            tableView.createEmptyState(title: "Oops! You have not selected the item.", message: "When you tap some foods, you'll see them here.")
+        } else {
+            tableView.restore()
+        }
         return currentItems.count
     }
     
