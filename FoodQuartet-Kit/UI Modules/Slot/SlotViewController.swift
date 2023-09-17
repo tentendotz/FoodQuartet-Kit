@@ -128,19 +128,26 @@ extension SlotViewController {
         performQuery()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 
 extension SlotViewController {
+    
+    // MARK: - Navigation Transitions
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueID = segue.identifier else { return }
+        
+        switch segueID {
+        case K.WebSearchVC.segueIdentifier:
+            guard let webSearchVC = segue.destination as? WebSearchViewController else { return }
+            // Pass data,,,
+            
+        default:
+            print("The segue does not have a valid identifier.")
+        }
+    }
+    
     
     // MARK: - Additional Helpers
     
