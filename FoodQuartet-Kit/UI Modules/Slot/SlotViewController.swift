@@ -141,10 +141,10 @@ extension SlotViewController {
         switch segueID {
         case K.WebSearchVC.segueIdentifier:
             guard let webSearchVC = segue.destination as? WebSearchViewController else { return }
-            // Pass data,,,
+            webSearchVC.currentItems = slotItems.filter { $0.isSelected }
             
         default:
-            print("The segue does not have a valid identifier.")
+            print("No operation segue - segueID: \(segueID), destination: \(segue.destination)")
         }
     }
     
