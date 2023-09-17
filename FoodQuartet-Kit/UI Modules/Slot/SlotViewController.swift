@@ -38,7 +38,7 @@ final class SlotViewController: UIViewController {
             evaluatePlusButtonState()
         }
     }
-
+    
     
     private var userRules = [String]() {
         didSet {
@@ -70,6 +70,7 @@ extension SlotViewController {
         super.viewDidLoad()
         // HACK: Provisionally initialize for localized filter button label
         userRules = []
+        navigationItem.backButtonTitle = K.L10n.back
         
         tableView.dataSource = self
         tableView.delegate = self

@@ -16,7 +16,10 @@ final class WebSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        title = "Search Recipe"
+        navigationItem.rightBarButtonItem = editButtonItem
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(WebSearchCell.self, forCellReuseIdentifier: K.WebSearchVC.cellIdentifier)
