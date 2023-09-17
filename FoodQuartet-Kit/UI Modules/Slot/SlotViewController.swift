@@ -138,13 +138,12 @@ extension SlotViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let segueID = segue.identifier else { return }
         
-        switch segueID {
-        case K.WebSearchVC.segueIdentifier:
-            guard let webSearchVC = segue.destination as? WebSearchViewController else { return }
+        switch (segueID, segue.destination) {
+        case (K.WebSearchVC.segueIdentifier, let webSearchVC as WebSearchViewController):
             webSearchVC.currentItems = slotItems.filter { $0.isSelected }
             
-        default:
-            print("No operation segue - segueID: \(segueID), destination: \(segue.destination)")
+        case let (unknownID, destinationVC):
+            print("No operation segue - segueID: \(unknownID), destination: \(destinationVC)")
         }
     }
     
