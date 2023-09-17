@@ -24,9 +24,17 @@ final class WebSearchViewController: UIViewController {
         tableView.delegate = self
         tableView.register(WebSearchCell.self, forCellReuseIdentifier: K.WebSearchVC.cellIdentifier)
     }
-    
+}
+
+
+extension WebSearchViewController {
     
     // MARK: - User Interaction
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.setEditing(editing, animated: true)
+    }
     
     @IBAction private func safariPressed(_ sender: UIButton) {
     }
