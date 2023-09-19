@@ -66,6 +66,10 @@ extension WebSearchViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return tableView.isEditing ? .delete : .none
+    }
+    
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let removed = currentItems.remove(at: sourceIndexPath.row)
         currentItems.insert(removed, at: destinationIndexPath.row)
