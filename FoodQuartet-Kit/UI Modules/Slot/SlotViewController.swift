@@ -38,7 +38,7 @@ final class SlotViewController: UIViewController {
             evaluatePlusButtonState()
         }
     }
-
+    
     
     private var userRules = [String]() {
         didSet {
@@ -70,6 +70,7 @@ extension SlotViewController {
         super.viewDidLoad()
         // HACK: Provisionally initialize for localized filter button label
         userRules = []
+        navigationItem.backButtonTitle = K.L10n.back
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -128,19 +129,25 @@ extension SlotViewController {
         performQuery()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 
 extension SlotViewController {
+    
+    // MARK: - Navigation Transitions
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueID = segue.identifier else { return }
+        
+        switch (segueID, segue.destination) {
+        case (K.WebSearchVC.segueIdentifier, let webSearchVC as WebSearchViewController):
+            webSearchVC.currentItems = slotItems.filter { $0.isSelected }
+            
+        case let (unknownID, destinationVC):
+            print("No operation segue - segueID: \(unknownID), destination: \(destinationVC)")
+        }
+    }
+    
     
     // MARK: - Additional Helpers
     

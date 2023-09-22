@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hGc-EH-VJe">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -156,7 +157,7 @@
                                             <color key="baseBackgroundColor" name="PrimaryColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="oPp-Vd-8vn" kind="presentation" id="g5v-KB-lYq"/>
+                                            <segue destination="oPp-Vd-8vn" kind="presentation" identifier="goToMonthPicker" id="g5v-KB-lYq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -208,7 +209,7 @@
                                             <color key="baseBackgroundColor" name="SecondaryColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="ckt-cr-qbE" kind="show" id="Hjb-NJ-2gJ"/>
+                                            <segue destination="ckt-cr-qbE" kind="show" identifier="goToWebSearch" id="Hjb-NJ-2gJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -285,7 +286,7 @@
         <image name="sun.max" catalog="system" width="128" height="125"/>
         <image name="sun.min" catalog="system" width="128" height="123"/>
         <namedColor name="PrimaryColor">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94117647058823528" green="0.94117647058823528" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SecondaryColor">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
