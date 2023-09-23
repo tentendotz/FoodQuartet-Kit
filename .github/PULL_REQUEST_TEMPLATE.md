@@ -13,7 +13,7 @@
 |---|---------------
 |   |✨ New Feature
 |   |🐞 Bug Fix
-|   |👌 Enhancement 
+|   |🪄 Enhancement
 |   |🛠️ Other
 
 
@@ -33,9 +33,9 @@ Description
 ### PR Validation Checklist
 <!-- If no tests are needed, please remove this section. -->
 
-- [ ] 👏 Local build completed without errors
-- [ ] 🙋 Added tests for effectiveness
-- [ ] 👍 All tests (new and existing) passed
+- [ ] 🥽 Local build completed without errors
+- [ ] 🧪 Added tests for effectiveness
+- [ ] 🤝 All tests (new and existing) passed
 
 
 
