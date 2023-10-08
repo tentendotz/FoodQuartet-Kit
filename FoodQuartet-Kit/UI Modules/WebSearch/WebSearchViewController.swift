@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 final class WebSearchViewController: UIViewController {
     
@@ -45,6 +46,8 @@ extension WebSearchViewController {
             return
         }
         
+        let webVC = SFSafariViewController(url: url)
+        present(webVC, animated: true)
     }
     
     private func createURL(with query: String) -> URL? {
