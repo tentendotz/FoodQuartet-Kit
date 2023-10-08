@@ -37,6 +37,14 @@ extension WebSearchViewController {
     }
     
     @IBAction private func safariPressed(_ sender: UIButton) {
+        let base = "Recipe"
+        let foodNames = currentItems.map { $0.name }.joined(separator: "+")
+        let searchTerms = currentItems.isEmpty ? base : "\(base)+\(foodNames)"
+        
+        guard let url = createURL(with: searchTerms) else {
+            return
+        }
+        
     }
     
     private func createURL(with query: String) -> URL? {
