@@ -38,6 +38,21 @@ extension WebSearchViewController {
     
     @IBAction private func safariPressed(_ sender: UIButton) {
     }
+    
+    private func createURL(with query: String) -> URL? {
+        // https://www.google.com/search?q=queryItem
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "www.google.com"
+        urlComponents.path = "/search"
+        urlComponents.queryItems = [URLQueryItem(name: "q", value: query)]
+        
+        guard let encodedURL = urlComponents.url else {
+            return nil
+        }
+        
+        return encodedURL
+    }
 }
 
 
