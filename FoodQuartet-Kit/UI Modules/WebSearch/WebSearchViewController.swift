@@ -42,27 +42,14 @@ extension WebSearchViewController {
         let foodNames = currentItems.map { $0.name }.joined(separator: "+")
         let searchTerms = currentItems.isEmpty ? base : "\(base)+\(foodNames)"
         
-        guard let url = createURL(with: searchTerms) else {
+        let googleSearch = Endpoint(queryItems: [URLQueryItem(name: "q", value: searchTerms)])
+        
+        guard let url = googleSearch.url else {
             return
         }
         
         let webVC = SFSafariViewController(url: url)
         present(webVC, animated: true)
-    }
-    
-    private func createURL(with query: String) -> URL? {
-        // https://www.google.com/search?q=queryItem
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "www.google.com"
-        urlComponents.path = "/search"
-        urlComponents.queryItems = [URLQueryItem(name: "q", value: query)]
-        
-        guard let encodedURL = urlComponents.url else {
-            return nil
-        }
-        
-        return encodedURL
     }
 }
 
