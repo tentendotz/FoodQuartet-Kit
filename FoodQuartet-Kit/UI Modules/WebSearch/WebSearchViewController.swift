@@ -39,8 +39,7 @@ extension WebSearchViewController {
     
     @IBAction private func safariPressed(_ sender: UIButton) {
         let foodNames = currentItems.map { $0.name }
-        let googleSearch = Endpoint(searchTerms: foodNames)
-        
+        let googleSearch = Endpoint(site: .google, searchTerms: foodNames)
         guard let url = googleSearch.url else {
             return
         }

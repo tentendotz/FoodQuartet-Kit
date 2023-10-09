@@ -9,9 +9,11 @@ import Foundation
 
 struct Endpoint {
     
+    let host: Host
     let queryItems: [URLQueryItem]?
     
-    init(searchTerms: [String]) {
+    init(site: Host, searchTerms: [String]) {
+        self.host = site
         let base = ["Recipe"]
         let queryTerms = searchTerms.isEmpty ? base : base + searchTerms
         let queryString = queryTerms.joined(separator: "+")
@@ -23,10 +25,19 @@ struct Endpoint {
     var url: URL? {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
-        urlComponents.host = "www.google.com"
+        urlComponents.host = host.rawValue
         urlComponents.path = "/search"
         urlComponents.queryItems = queryItems
         
         return urlComponents.url
+    }
+}
+
+
+extension Endpoint {
+    
+    enum Host: String {
+        case google = "www.google.com"
+        
     }
 }
