@@ -11,6 +11,14 @@ struct Endpoint {
     
     let queryItems: [URLQueryItem]?
     
+    init(searchTerms: [String]) {
+        let base = ["Recipe"]
+        let queryTerms = searchTerms.isEmpty ? base : base + searchTerms
+        let queryString = queryTerms.joined(separator: "+")
+        
+        self.queryItems = [URLQueryItem(name: "q", value: queryString)]
+    }
+
     // https://www.google.com/search?q=queryItem
     var url: URL? {
         var urlComponents = URLComponents()
