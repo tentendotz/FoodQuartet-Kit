@@ -14,11 +14,7 @@ struct Endpoint {
     
     init(site: Host, searchTerms: [String]) {
         self.host = site
-        let base = ["Recipe"]
-        let queryTerms = searchTerms.isEmpty ? base : base + searchTerms
-        let queryString = queryTerms.joined(separator: "+")
-        
-        self.queryItems = [URLQueryItem(name: "q", value: queryString)]
+        self.queryItems = site.buildQuery(with: searchTerms)
     }
 
     // https://www.google.com/search?q=queryItem
@@ -39,5 +35,15 @@ extension Endpoint {
     enum Host: String {
         case google = "www.google.com"
         
+        func buildQuery(with keywords: [String]) -> [URLQueryItem]? {
+            let base = ["Recipe"]
+            let queryTerms = keywords.isEmpty ? base : base + keywords
+            let queryString = queryTerms.joined(separator: "+")
+            
+            switch self {
+            case .google:
+                return [URLQueryItem(name: "q", value: queryString)]
+            }
+        }
     }
 }
