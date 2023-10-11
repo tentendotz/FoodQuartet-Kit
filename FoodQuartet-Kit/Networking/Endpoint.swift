@@ -10,19 +10,20 @@ import Foundation
 struct Endpoint {
     
     let host: Host
+    let path: String
     let queryItems: [URLQueryItem]?
     
     init(site: Host, searchTerms: [String]) {
         self.host = site
+        self.path = site.buildPath()
         self.queryItems = site.buildQuery(with: searchTerms)
     }
-
-    // https://www.google.com/search?q=queryItem
+    
     var url: URL? {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = host.rawValue
-        urlComponents.path = "/search"
+        urlComponents.path = path
         urlComponents.queryItems = queryItems
         
         return urlComponents.url
@@ -32,8 +33,20 @@ struct Endpoint {
 
 extension Endpoint {
     
+    // MARK: - URL Components Definition
+    
     enum Host: String {
+        /// https://www.google.com/search?q=queryItem
         case google = "www.google.com"
+        
+        func buildPath() -> String {
+            let search = "/search"
+            
+            switch self {
+            case .google:
+                return search
+            }
+        }
         
         func buildQuery(with keywords: [String]) -> [URLQueryItem]? {
             let base = ["Recipe"]
