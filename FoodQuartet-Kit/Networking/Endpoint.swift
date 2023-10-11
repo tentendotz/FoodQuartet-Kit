@@ -15,7 +15,7 @@ struct Endpoint {
     
     init(site: Host, searchTerms: [String]) {
         self.host = site
-        self.path = site.buildPath()
+        self.path = site.buildPath(with: searchTerms)
         self.queryItems = site.buildQuery(with: searchTerms)
     }
     
@@ -41,12 +41,16 @@ extension Endpoint {
         /// https://www.foodnetwork.com/search/keywords-
         case foodNetwork = "www.foodnetwork.com"
         
-        func buildPath() -> String {
+        func buildPath(with keywords: [String]) -> String {
             let search = "/search"
             
             switch self {
             case .google:
                 return search
+            case .foodNetwork:
+                let segment = keywords.joined(separator: "-").appending("-")
+                let searchDir = [search, segment].joined(separator: "/")
+                return searchDir
             }
         }
         
@@ -58,6 +62,8 @@ extension Endpoint {
             switch self {
             case .google:
                 return [URLQueryItem(name: "q", value: queryString)]
+            default:
+                return nil
             }
         }
     }
