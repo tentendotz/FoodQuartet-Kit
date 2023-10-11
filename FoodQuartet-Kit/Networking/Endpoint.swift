@@ -38,6 +38,8 @@ extension Endpoint {
     enum Host: String {
         /// https://www.google.com/search?q=queryItem
         case google = "www.google.com"
+        /// https://www.foodnetwork.com/search/keywords-
+        case foodNetwork = "www.foodnetwork.com"
         
         func buildPath() -> String {
             let search = "/search"
