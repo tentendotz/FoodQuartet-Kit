@@ -12,5 +12,15 @@ struct URLLoader {
     enum LoaderError: LocalizedError {
         case invalidURL
         
+        var errorDescription: String? {
+            return "Error"
+        }
+        
+        var failureReason: String? {
+            switch self {
+            case .invalidURL:
+                return "Google search has failed. The input may contain invalid characters.\nPlease change your search terms and try again."
+            }
+        }
     }
 }
