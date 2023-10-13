@@ -19,6 +19,7 @@
 		064390692AA765E5005BC6D6 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064390682AA765E5005BC6D6 /* UIViewController+Alert.swift */; };
 		06515F8C2A78035100772B08 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06515F8B2A78035100772B08 /* UIView+IBInspectable.swift */; };
 		068B274E2AD5A967004F22E3 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B274D2AD5A967004F22E3 /* Endpoint.swift */; };
+		06A187862AD9728D0011D008 /* URLLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A187852AD9728D0011D008 /* URLLoader.swift */; };
 		06A3212F2A504BB300F1B4C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A3212E2A504BB300F1B4C2 /* AppDelegate.swift */; };
 		06A321312A504BB300F1B4C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A321302A504BB300F1B4C2 /* SceneDelegate.swift */; };
 		06A321362A504BB300F1B4C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A321342A504BB300F1B4C2 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		064390682AA765E5005BC6D6 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alert.swift"; path = "FoodQuartet-Kit/UI Modules/Slot/UIViewController+Alert.swift"; sourceTree = SOURCE_ROOT; };
 		06515F8B2A78035100772B08 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		068B274D2AD5A967004F22E3 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		06A187852AD9728D0011D008 /* URLLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLLoader.swift; sourceTree = "<group>"; };
 		06A3212B2A504BB300F1B4C2 /* FoodQuartet-Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FoodQuartet-Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06A3212E2A504BB300F1B4C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06A321302A504BB300F1B4C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				068B274D2AD5A967004F22E3 /* Endpoint.swift */,
+				06A187852AD9728D0011D008 /* URLLoader.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				06A321572A50539200F1B4C2 /* SlotViewController.swift in Sources */,
 				06180D432A508EC80052D1B3 /* UIColor+HexColor.swift in Sources */,
 				062554282A6036BE00AEF4F5 /* FoodBrain.swift in Sources */,
+				06A187862AD9728D0011D008 /* URLLoader.swift in Sources */,
 				064390692AA765E5005BC6D6 /* UIViewController+Alert.swift in Sources */,
 				06A8F8902A811F6000399B31 /* UITableView+EmptyState.swift in Sources */,
 				06A3212F2A504BB300F1B4C2 /* AppDelegate.swift in Sources */,
