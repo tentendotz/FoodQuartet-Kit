@@ -9,4 +9,8 @@ import Foundation
 
 struct URLLoader {
     
+    enum LoaderError: LocalizedError {
+        case invalidURL
+        
+    }
 }
