@@ -24,6 +24,7 @@ struct URLLoader {
         }
     }
     
+    /// Requests the URL using the specified `Endpoint` and throws a specific error if the operation fails.
     func request(target: Endpoint) throws -> URL {
         guard let encodedURL = target.url else {
             throw LoaderError.invalidURL
