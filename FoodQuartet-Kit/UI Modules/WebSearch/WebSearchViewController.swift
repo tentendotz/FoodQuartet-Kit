@@ -11,7 +11,10 @@ import SafariServices
 final class WebSearchViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
+    
+    private let urlLoader = URLLoader()
     var currentItems = [Food]()
+    
     
     // MARK: - View Lifecycle
     
