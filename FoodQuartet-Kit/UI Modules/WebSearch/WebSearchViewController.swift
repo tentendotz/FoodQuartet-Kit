@@ -49,8 +49,9 @@ extension WebSearchViewController {
             let webVC = SFSafariViewController(url: url)
             present(webVC, animated: true)
             
-        } catch {
-            
+        } catch let error as NSError {
+            let okAction = UIAlertAction(title: K.L10n.ok, style: .default)
+            displayAlert(title: error.localizedDescription, message: error.localizedFailureReason, actions: [okAction], style: .actionSheet)
         }
     }
 }
