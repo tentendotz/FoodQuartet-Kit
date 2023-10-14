@@ -23,4 +23,12 @@ struct URLLoader {
             }
         }
     }
+    
+    func request(target: Endpoint) throws -> URL {
+        guard let encodedURL = target.url else {
+            throw LoaderError.invalidURL
+        }
+        print(encodedURL.description)
+        return encodedURL
+    }
 }
