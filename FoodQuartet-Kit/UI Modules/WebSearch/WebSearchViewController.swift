@@ -43,12 +43,15 @@ extension WebSearchViewController {
     @IBAction private func safariPressed(_ sender: UIButton) {
         let foodNames = currentItems.map { $0.name }
         let googleSearch = Endpoint(site: .google, searchTerms: foodNames)
-        guard let url = googleSearch.url else {
-            return
-        }
         
-        let webVC = SFSafariViewController(url: url)
-        present(webVC, animated: true)
+        do {
+            let url = try urlLoader.request(target: googleSearch)
+            let webVC = SFSafariViewController(url: url)
+            present(webVC, animated: true)
+            
+        } catch {
+            
+        }
     }
 }
 
