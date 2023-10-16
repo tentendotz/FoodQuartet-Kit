@@ -76,7 +76,9 @@ extension K {
         static let cancel = L10n.localized("action_cancel")
         
         // Networking
-        
+        static let recipe = L10n.localized("word_recipe")
+        static let error = L10n.localized("title_error")
+        static let googleFailed = L10n.localized("message_google_failed")
         
         // In SlotVC
         static let noData = L10n.localized("title_no_data")
@@ -88,6 +90,10 @@ extension K {
         static let deselectItem = L10n.localized("message_deselect_item")
         static let askReset = L10n.localized("title_ask_reset")
         
+        // In WebSearchVC
+        static let searchRecipe = L10n.localized("label_search_recipe")
+        static let noItemSelected = L10n.localized("title_no_item_selected")
+        static let tapBackButton = L10n.localized("message_tap_backButton")
         
         // Dynamic String
         static func rateOfSeasons(with numerator: String) -> String {
