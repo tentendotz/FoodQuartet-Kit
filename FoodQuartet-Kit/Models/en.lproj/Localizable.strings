@@ -21,14 +21,16 @@
 "type_fall" = "Fall (SEP. OCT. NOV.)";
 "type_winter" = "Winter (DEC. JAN. FEB.)";
 
-// Action Button
+// User Action
 "action_back" = "Back";
 "action_delete" = "Delete";
 "action_reset" = "Reset";
 "action_ok" = "OK";
 "action_cancel" = "Cancel";
 
-// SlotVC
+// Networking
+
+// In SlotVC
 "title_no_data" = "No Food Data";
 "message_tap_plusButton" = "Tap the plus button to add item.";
 "title_not_found" = "Not found";

@@ -68,14 +68,17 @@ extension K {
         static let fall = L10n.localized("type_fall")
         static let winter = L10n.localized("type_winter")
         
-        // Action Button
+        // User Action
         static let back = L10n.localized("action_back")
         static let delete = L10n.localized("action_delete")
         static let reset = L10n.localized("action_reset")
         static let ok = L10n.localized("action_ok")
         static let cancel = L10n.localized("action_cancel")
         
-        // SlotVC
+        // Networking
+        
+        
+        // In SlotVC
         static let noData = L10n.localized("title_no_data")
         static let tapPlusButton = L10n.localized("message_tap_plusButton")
         static let notFound = L10n.localized("title_not_found")
