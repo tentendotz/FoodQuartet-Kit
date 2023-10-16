@@ -29,6 +29,9 @@
 "action_cancel" = "キャンセル";
 
 // Networking
+"word_recipe" = "レシピ";
+"title_error" = "エラー";
+"message_google_failed" = "Google検索を実行できませんでした。\n検索キーワードに無効な文字が含まれています。検索キーワードを変更してください。";
 
 // In SlotVC
 "title_no_data" = "食材データが見つかりません";
@@ -40,6 +43,10 @@
 "message_deselect_item" = "食材の選択を解除してください。";
 "title_ask_reset" = "絞り込み条件を解除しますか？";
 
+// In WebSearchVC
+"label_search_recipe" = "レシピ検索";
+"title_no_item_selected" = "食材が選択されていません";
+"message_tap_backButton" = "戻るボタンをタップして、\n食材を選択してください。";
 
 // Dynamic String
 "label_dynamic_rate" = "%@/4 seasons";
