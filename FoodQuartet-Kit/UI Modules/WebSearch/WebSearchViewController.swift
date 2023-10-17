@@ -63,7 +63,6 @@ extension WebSearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if currentItems.isEmpty {
-            // TODO: - Localization
             tableView.createEmptyState(title: K.L10n.noItemSelected, message: K.L10n.tapBackButton)
         } else {
             tableView.restore()
