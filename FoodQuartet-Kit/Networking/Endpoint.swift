@@ -56,7 +56,7 @@ extension Endpoint {
         }
         
         func buildQuery(with keywords: [String]) -> [URLQueryItem]? {
-            let base = ["Recipe"]
+            let base = [K.L10n.recipe] // Recipe
             let queryTerms = keywords.isEmpty ? base : base + keywords
             let queryString = queryTerms.joined(separator: "+")
             

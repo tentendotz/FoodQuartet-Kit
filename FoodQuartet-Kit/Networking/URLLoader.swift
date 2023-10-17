@@ -13,13 +13,13 @@ struct URLLoader {
         case invalidURL
         
         var errorDescription: String? {
-            return "Error"
+            return K.L10n.error
         }
         
         var failureReason: String? {
             switch self {
             case .invalidURL:
-                return "Google search has failed. The input may contain invalid characters.\nPlease change your search terms and try again."
+                return K.L10n.googleFailed
             }
         }
     }
