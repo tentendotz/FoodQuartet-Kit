@@ -51,7 +51,7 @@ extension WebSearchViewController {
             
         } catch let error as NSError {
             let okAction = UIAlertAction(title: K.L10n.ok, style: .default)
-            displayAlert(title: error.localizedDescription, message: error.localizedFailureReason, actions: [okAction], style: .actionSheet)
+            displayAlert(title: error.localizedDescription, message: error.localizedFailureReason, actions: [okAction])
         }
     }
 }
