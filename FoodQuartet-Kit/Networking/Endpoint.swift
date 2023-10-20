@@ -9,9 +9,9 @@ import Foundation
 
 struct Endpoint {
     
-    let host: Host
-    let path: String
-    let queryItems: [URLQueryItem]?
+    private let host: Host
+    private let path: String
+    private let queryItems: [URLQueryItem]?
     
     /// Initializes the endpoint for a particular website using specified search terms.
     init(site: Host, searchTerms: [String]) {
@@ -42,7 +42,7 @@ extension Endpoint {
         /// https://www.foodnetwork.com/search/keywords-
         case foodNetwork = "www.foodnetwork.com"
         
-        func buildPath(with keywords: [String]) -> String {
+        fileprivate func buildPath(with keywords: [String]) -> String {
             let search = "/search"
             
             switch self {
@@ -55,7 +55,7 @@ extension Endpoint {
             }
         }
         
-        func buildQuery(with keywords: [String]) -> [URLQueryItem]? {
+        fileprivate func buildQuery(with keywords: [String]) -> [URLQueryItem]? {
             let base = [K.L10n.recipe] // Recipe
             let queryTerms = keywords.isEmpty ? base : base + keywords
             let queryString = queryTerms.joined(separator: "+")
