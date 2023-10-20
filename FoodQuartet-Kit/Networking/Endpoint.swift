@@ -14,10 +14,10 @@ struct Endpoint {
     private let queryItems: [URLQueryItem]?
     
     /// Initializes the endpoint for a particular website using specified search terms.
-    init(site: Host, searchTerms: [String]) {
-        self.host = site
-        self.path = site.buildPath(with: searchTerms)
-        self.queryItems = site.buildQuery(with: searchTerms)
+    init(host: Host, components: [String]) {
+        self.host = host
+        self.path = host.buildPath(with: components)
+        self.queryItems = host.buildQuery(with: components)
     }
     
     var url: URL? {
