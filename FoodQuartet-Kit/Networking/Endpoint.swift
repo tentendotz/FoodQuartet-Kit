@@ -13,7 +13,7 @@ struct Endpoint {
     private let path: String
     private let queryItems: [URLQueryItem]?
     
-    /// Initializes the endpoint for a particular website using specified search terms.
+    /// Initializes the endpoint for a specific website using an array of components.
     init(host: Host, components: [String]) {
         self.host = host
         self.path = host.buildPath(with: components)

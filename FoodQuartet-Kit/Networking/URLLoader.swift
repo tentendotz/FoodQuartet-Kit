@@ -24,7 +24,7 @@ struct URLLoader {
         }
     }
     
-    /// Requests the URL using the specified `Endpoint` and throws a specific error if the operation fails.
+    /// Requests the encoded URL for the target using the specified search terms.
     func request(target: Endpoint.Host, searchTerms: [String]) throws -> URL {
         let endpoint = Endpoint(host: target, components: searchTerms)
         
