@@ -42,14 +42,14 @@ extension Endpoint {
         /// https://www.foodnetwork.com/search/keywords-
         case foodNetwork = "www.foodnetwork.com"
         
-        fileprivate func buildPath(with keywords: [String]) -> String {
+        fileprivate func buildPath(with segments: [String]) -> String {
             let search = "/search"
             
             switch self {
             case .google:
                 return search
             case .foodNetwork:
-                let segment = keywords.joined(separator: "-").appending("-")
+                let segment = segments.joined(separator: "-").appending("-")
                 let searchDir = [search, segment].joined(separator: "/")
                 return searchDir
             }
@@ -57,8 +57,8 @@ extension Endpoint {
         
         fileprivate func buildQuery(with keywords: [String]) -> [URLQueryItem]? {
             let base = [K.L10n.recipe] // Recipe
-            let queryTerms = keywords.isEmpty ? base : base + keywords
-            let queryString = queryTerms.joined(separator: "+")
+            let queries = keywords.isEmpty ? base : base + keywords
+            let queryString = queries.joined(separator: "+")
             
             switch self {
             case .google:
