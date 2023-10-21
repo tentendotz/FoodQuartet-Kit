@@ -6,18 +6,22 @@
 //
 
 import UIKit
+import SafariServices
 
 final class WebSearchViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
+    
+    private let urlLoader = URLLoader()
     var currentItems = [Food]()
+    
     
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Search Recipe"
+        title = K.L10n.searchRecipe
         navigationItem.rightBarButtonItem = editButtonItem
         
         tableView.dataSource = self
@@ -37,6 +41,17 @@ extension WebSearchViewController {
     }
     
     @IBAction private func safariPressed(_ sender: UIButton) {
+        let foodNames = currentItems.map { $0.name }
+        
+        do {
+            let url = try urlLoader.request(target: .google, searchTerms: foodNames)
+            let webVC = SFSafariViewController(url: url)
+            present(webVC, animated: true)
+            
+        } catch let error as NSError {
+            let okAction = UIAlertAction(title: K.L10n.ok, style: .default)
+            displayAlert(title: error.localizedDescription, message: error.localizedFailureReason, actions: [okAction])
+        }
     }
 }
 
@@ -47,8 +62,7 @@ extension WebSearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if currentItems.isEmpty {
-            // TODO: - Localization
-            tableView.createEmptyState(title: "Oops! You have not selected the item.", message: "When you tap some foods, you'll see them here.")
+            tableView.createEmptyState(title: K.L10n.noItemSelected, message: K.L10n.tapBackButton)
         } else {
             tableView.restore()
         }

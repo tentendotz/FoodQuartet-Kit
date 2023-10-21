@@ -68,14 +68,19 @@ extension K {
         static let fall = L10n.localized("type_fall")
         static let winter = L10n.localized("type_winter")
         
-        // Action Button
+        // User Action
         static let back = L10n.localized("action_back")
         static let delete = L10n.localized("action_delete")
         static let reset = L10n.localized("action_reset")
         static let ok = L10n.localized("action_ok")
         static let cancel = L10n.localized("action_cancel")
         
-        // SlotVC
+        // Networking
+        static let recipe = L10n.localized("word_recipe")
+        static let error = L10n.localized("title_error")
+        static let googleFailed = L10n.localized("message_google_failed")
+        
+        // In SlotVC
         static let noData = L10n.localized("title_no_data")
         static let tapPlusButton = L10n.localized("message_tap_plusButton")
         static let notFound = L10n.localized("title_not_found")
@@ -85,6 +90,10 @@ extension K {
         static let deselectItem = L10n.localized("message_deselect_item")
         static let askReset = L10n.localized("title_ask_reset")
         
+        // In WebSearchVC
+        static let searchRecipe = L10n.localized("label_search_recipe")
+        static let noItemSelected = L10n.localized("title_no_item_selected")
+        static let tapBackButton = L10n.localized("message_tap_backButton")
         
         // Dynamic String
         static func rateOfSeasons(with numerator: String) -> String {

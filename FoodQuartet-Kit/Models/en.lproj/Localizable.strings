@@ -21,14 +21,19 @@
 "type_fall" = "Fall (SEP. OCT. NOV.)";
 "type_winter" = "Winter (DEC. JAN. FEB.)";
 
-// Action Button
+// User Action
 "action_back" = "Back";
 "action_delete" = "Delete";
 "action_reset" = "Reset";
 "action_ok" = "OK";
 "action_cancel" = "Cancel";
 
-// SlotVC
+// Networking
+"word_recipe" = "Recipe";
+"title_error" = "Error";
+"message_google_failed" = "Google search has failed. The input may contain invalid characters.\nPlease change your search terms and try again.";
+
+// In SlotVC
 "title_no_data" = "No Food Data";
 "message_tap_plusButton" = "Tap the plus button to add item.";
 "title_not_found" = "Not found";
@@ -38,6 +43,10 @@
 "message_deselect_item" = "Deselect the item to perform the change button.";
 "title_ask_reset" = "Do you reset current filter?";
 
+// In WebSearchVC
+"label_search_recipe" = "Search Recipe";
+"title_no_item_selected" = "Oops! You have not selected the item.";
+"message_tap_backButton" = "When you tap some foods, you'll see them here.";
 
 // Dynamic String
 "label_dynamic_rate" = "%@/4 seasons";
