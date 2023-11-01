@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b3T-1J-EOd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b3T-1J-EOd">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -39,7 +39,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Qf1-Tu-329">
                                 <rect key="frame" x="0.0" y="103" width="393" height="635"/>
-                                <color key="backgroundColor" name="PrimaryColor"/>
+                                <color key="backgroundColor" name="PrimaryColors"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iV4-b2-g4I">
                                 <rect key="frame" x="16" y="746" width="361" height="48"/>
@@ -54,7 +54,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="medium" weight="medium"/>
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
                                     <color key="baseForegroundColor" name="AccentColor"/>
-                                    <color key="baseBackgroundColor" name="SecondaryColor"/>
+                                    <color key="baseBackgroundColor" name="SecondaryColors"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="donePressed:" destination="yWF-oN-b58" eventType="touchUpInside" id="6gr-XA-07R"/>
@@ -62,7 +62,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GZ6-ga-sXr"/>
-                        <color key="backgroundColor" name="PrimaryColor"/>
+                        <color key="backgroundColor" name="PrimaryColors"/>
                         <constraints>
                             <constraint firstItem="Qf1-Tu-329" firstAttribute="leading" secondItem="GZ6-ga-sXr" secondAttribute="leading" id="0DJ-B8-IeK"/>
                             <constraint firstItem="Qf1-Tu-329" firstAttribute="trailing" secondItem="GZ6-ga-sXr" secondAttribute="trailing" id="UfV-AS-ucg"/>
@@ -93,16 +93,16 @@
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.62745098039215685" green="0.27843137254901962" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="PrimaryColor">
+        <namedColor name="PrimaryColors">
             <color red="0.94117647058823528" green="0.94117647058823528" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="SecondaryColor">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="SecondaryColors">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

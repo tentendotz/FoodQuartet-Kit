@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bQS-u7-67S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bQS-u7-67S">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -20,7 +20,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="P6q-EO-CNo">
                                 <rect key="frame" x="8" y="131" width="377" height="527"/>
-                                <color key="backgroundColor" name="PrimaryColor"/>
+                                <color key="backgroundColor" name="PrimaryColors"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUn-m3-stl">
                                 <rect key="frame" x="40" y="690" width="313" height="56"/>
@@ -39,7 +39,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="medium"/>
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
                                     <color key="baseForegroundColor" name="AccentColor"/>
-                                    <color key="baseBackgroundColor" name="SecondaryColor"/>
+                                    <color key="baseBackgroundColor" name="SecondaryColors"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
@@ -58,7 +58,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DSI-Ba-34A"/>
-                        <color key="backgroundColor" name="PrimaryColor"/>
+                        <color key="backgroundColor" name="PrimaryColors"/>
                         <constraints>
                             <constraint firstItem="DSI-Ba-34A" firstAttribute="trailing" secondItem="P6q-EO-CNo" secondAttribute="trailing" constant="8" id="0ow-hr-xnz"/>
                             <constraint firstItem="DSI-Ba-34A" firstAttribute="bottom" secondItem="DUn-m3-stl" secondAttribute="bottom" constant="72" id="DMh-de-AYf"/>
@@ -84,11 +84,11 @@
         <namedColor name="AccentColor">
             <color red="0.62745098039215685" green="0.27843137254901962" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="PrimaryColor">
+        <namedColor name="PrimaryColors">
             <color red="0.94117647058823528" green="0.94117647058823528" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="SecondaryColor">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="SecondaryColors">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

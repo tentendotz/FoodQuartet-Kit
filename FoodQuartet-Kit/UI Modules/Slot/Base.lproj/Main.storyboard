@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hGc-EH-VJe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hGc-EH-VJe">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -84,7 +84,7 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
                                             <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
-                                            <color key="baseBackgroundColor" name="TertiaryColor"/>
+                                            <color key="baseBackgroundColor" name="TertiaryColors"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="seasonsPressed:" destination="11I-Ph-FKa" eventType="touchUpInside" id="bLi-K8-qBM"/>
@@ -103,7 +103,7 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
                                             <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
-                                            <color key="baseBackgroundColor" name="TertiaryColor"/>
+                                            <color key="baseBackgroundColor" name="TertiaryColors"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="seasonsPressed:" destination="11I-Ph-FKa" eventType="touchUpInside" id="6Q3-Yq-RWD"/>
@@ -122,7 +122,7 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
                                             <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
-                                            <color key="baseBackgroundColor" name="TertiaryColor"/>
+                                            <color key="baseBackgroundColor" name="TertiaryColors"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="seasonsPressed:" destination="11I-Ph-FKa" eventType="touchUpInside" id="vYB-TA-fPj"/>
@@ -141,7 +141,7 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
                                             <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
-                                            <color key="baseBackgroundColor" name="TertiaryColor"/>
+                                            <color key="baseBackgroundColor" name="TertiaryColors"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="seasonsPressed:" destination="11I-Ph-FKa" eventType="touchUpInside" id="EM7-h6-B1U"/>
@@ -154,7 +154,7 @@
                                         <buttonConfiguration key="configuration" style="filled" image="ellipsis" catalog="system" cornerStyle="large">
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
-                                            <color key="baseBackgroundColor" name="PrimaryColor"/>
+                                            <color key="baseBackgroundColor" name="PrimaryColors"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="oPp-Vd-8vn" kind="presentation" identifier="goToMonthPicker" id="g5v-KB-lYq"/>
@@ -167,7 +167,7 @@
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7jf-8v-SAM">
                                 <rect key="frame" x="0.0" y="225.66666666666666" width="393" height="500.33333333333337"/>
-                                <color key="backgroundColor" name="PrimaryColor"/>
+                                <color key="backgroundColor" name="PrimaryColors"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="M9L-nD-zEf">
                                 <rect key="frame" x="24" y="734" width="345" height="52"/>
@@ -186,7 +186,7 @@
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="medium"/>
                                             <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
-                                            <color key="baseBackgroundColor" name="SecondaryColor"/>
+                                            <color key="baseBackgroundColor" name="SecondaryColors"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="changeItemsPressed:" destination="11I-Ph-FKa" eventType="touchUpInside" id="w0I-4Y-oAK"/>
@@ -206,7 +206,7 @@
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="medium"/>
                                             <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
-                                            <color key="baseBackgroundColor" name="SecondaryColor"/>
+                                            <color key="baseBackgroundColor" name="SecondaryColors"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="ckt-cr-qbE" kind="show" identifier="goToWebSearch" id="Hjb-NJ-2gJ"/>
@@ -219,7 +219,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5iI-IW-F7S"/>
-                        <color key="backgroundColor" name="PrimaryColor"/>
+                        <color key="backgroundColor" name="PrimaryColors"/>
                         <constraints>
                             <constraint firstItem="KU7-l6-y8f" firstAttribute="leading" secondItem="5iI-IW-F7S" secondAttribute="leading" constant="8" id="5YV-ma-Jqb"/>
                             <constraint firstItem="7jf-8v-SAM" firstAttribute="leading" secondItem="5iI-IW-F7S" secondAttribute="leading" id="96N-Ib-2Lf"/>
@@ -285,23 +285,23 @@
         <image name="snowflake" catalog="system" width="119" height="128"/>
         <image name="sun.max" catalog="system" width="128" height="125"/>
         <image name="sun.min" catalog="system" width="128" height="123"/>
-        <namedColor name="PrimaryColor">
+        <namedColor name="PrimaryColors">
             <color red="0.94117647058823528" green="0.94117647058823528" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="SecondaryColor">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="SecondaryColors">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="TertiaryColor">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="TertiaryColors">
+            <color red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

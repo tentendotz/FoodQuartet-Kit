@@ -37,11 +37,11 @@ enum K {
         static let winter = "WinterColor"
         
         /// Off White: #F0F0F3 / Rich Black: #0E1526
-        static let primary = "PrimaryColor"
+        static let primary = "PrimaryColors"
         /// White: #FFFFFF / Oxford Blue: #151D2E
-        static let secondary = "SecondaryColor"
+        static let secondary = "SecondaryColors"
         /// Gainsboro: #DFDFDF / Prussian blue: #1E293A
-        static let tertiary = "TertiaryColor"
+        static let tertiary = "TertiaryColors"
         /// Electric Purple: #A047EA / Blue Violet: #7134F3
         static let accent = "AccentColor"
     }
