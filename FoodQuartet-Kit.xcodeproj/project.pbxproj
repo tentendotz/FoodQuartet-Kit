@@ -18,6 +18,7 @@
 		0625542A2A61905500AEF4F5 /* DateFormatter+MonthName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062554292A61905500AEF4F5 /* DateFormatter+MonthName.swift */; };
 		064390692AA765E5005BC6D6 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064390682AA765E5005BC6D6 /* UIViewController+Alert.swift */; };
 		06515F8C2A78035100772B08 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06515F8B2A78035100772B08 /* UIView+IBInspectable.swift */; };
+		066A98142AF511580069F795 /* FoodsRawData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 066A98132AF511580069F795 /* FoodsRawData.csv */; };
 		068B274E2AD5A967004F22E3 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B274D2AD5A967004F22E3 /* Endpoint.swift */; };
 		06A187862AD9728D0011D008 /* URLLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A187852AD9728D0011D008 /* URLLoader.swift */; };
 		06A3212F2A504BB300F1B4C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A3212E2A504BB300F1B4C2 /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 		062554292A61905500AEF4F5 /* DateFormatter+MonthName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+MonthName.swift"; sourceTree = "<group>"; };
 		064390682AA765E5005BC6D6 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alert.swift"; path = "FoodQuartet-Kit/UI Modules/Slot/UIViewController+Alert.swift"; sourceTree = SOURCE_ROOT; };
 		06515F8B2A78035100772B08 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
+		066A98132AF511580069F795 /* FoodsRawData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FoodsRawData.csv; sourceTree = "<group>"; };
 		068B274D2AD5A967004F22E3 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		06A187852AD9728D0011D008 /* URLLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLLoader.swift; sourceTree = "<group>"; };
 		06A3212B2A504BB300F1B4C2 /* FoodQuartet-Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FoodQuartet-Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,7 @@
 		062554242A5EC8DD00AEF4F5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				066A98132AF511580069F795 /* FoodsRawData.csv */,
 				062554252A60338000AEF4F5 /* FoodsRawData.swift */,
 				062554222A5EC8D600AEF4F5 /* Food.swift */,
 				062554272A6036BE00AEF4F5 /* FoodBrain.swift */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06180D372A5055640052D1B3 /* WebSearch.storyboard in Resources */,
+				066A98142AF511580069F795 /* FoodsRawData.csv in Resources */,
 				06A3213B2A504BB600F1B4C2 /* LaunchScreen.storyboard in Resources */,
 				06A3214D2A50517E00F1B4C2 /* SlotCell.xib in Resources */,
 				06BA499F2AA4ACB80061CCD0 /* Localizable.strings in Resources */,
