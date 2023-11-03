@@ -19,6 +19,7 @@
 		064390692AA765E5005BC6D6 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064390682AA765E5005BC6D6 /* UIViewController+Alert.swift */; };
 		06515F8C2A78035100772B08 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06515F8B2A78035100772B08 /* UIView+IBInspectable.swift */; };
 		066A98142AF511580069F795 /* FoodsRawData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 066A98132AF511580069F795 /* FoodsRawData.csv */; };
+		066A98172AF66E440069F795 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 066A98162AF66E440069F795 /* SwiftCSV */; };
 		068B274E2AD5A967004F22E3 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B274D2AD5A967004F22E3 /* Endpoint.swift */; };
 		06A187862AD9728D0011D008 /* URLLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A187852AD9728D0011D008 /* URLLoader.swift */; };
 		06A3212F2A504BB300F1B4C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A3212E2A504BB300F1B4C2 /* AppDelegate.swift */; };
@@ -76,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				066A98172AF66E440069F795 /* SwiftCSV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +224,9 @@
 			dependencies = (
 			);
 			name = "FoodQuartet-Kit";
+			packageProductDependencies = (
+				066A98162AF66E440069F795 /* SwiftCSV */,
+			);
 			productName = "FoodQuartet-Kit";
 			productReference = 06A3212B2A504BB300F1B4C2 /* FoodQuartet-Kit.app */;
 			productType = "com.apple.product-type.application";
@@ -251,6 +256,9 @@
 				ja,
 			);
 			mainGroup = 06A321222A504BB300F1B4C2;
+			packageReferences = (
+				066A98152AF66E440069F795 /* XCRemoteSwiftPackageReference "SwiftCSV" */,
+			);
 			productRefGroup = 06A3212C2A504BB300F1B4C2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -536,6 +544,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		066A98152AF66E440069F795 /* XCRemoteSwiftPackageReference "SwiftCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftcsv/SwiftCSV.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		066A98162AF66E440069F795 /* SwiftCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 066A98152AF66E440069F795 /* XCRemoteSwiftPackageReference "SwiftCSV" */;
+			productName = SwiftCSV;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 06A321232A504BB300F1B4C2 /* Project object */;
 }
