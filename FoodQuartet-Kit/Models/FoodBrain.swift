@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftCSV
 
 struct FoodBrain {
     
@@ -66,6 +67,19 @@ extension FoodBrain {
             foods.append(Food(name: name, color: color, group: group, harvestTime: harvestTime))
         }
         return foods
+    }
+    
+    private func loadCSV(from fileName: String, type: String = "csv") -> [[String]]? {
+        do {
+            let csv = try CSV<Enumerated>(name: fileName, extension: type, delimiter: .comma, loadColumns: false)
+            return csv?.rows
+            
+        } catch let parseError as CSVParseError {
+            print(parseError)
+        } catch {
+            print(error)
+        }
+        return nil
     }
     
     
