@@ -37,6 +37,12 @@ extension FoodBrain {
     
     private func generateFoods() -> [Food] {
         var foods = [Food]()
+        let fileName = "FoodsRawData"
+        
+        guard let csvRows = loadCSV(from: fileName) else {
+            fatalError("Failed to load '\(fileName).csv' from the app bundle.")
+        }
+        
         let components = foodsRawData.components(separatedBy: .newlines)
         
         for line in components {
