@@ -43,12 +43,9 @@ extension FoodBrain {
             fatalError("Failed to load '\(fileName).csv' from the app bundle.")
         }
         
-        let components = foodsRawData.components(separatedBy: .newlines)
-        
-        for line in components {
-            let foodData = line.split(separator: "/")
-            let name = NSLocalizedString(String(foodData[0]), comment: "")
-            let hex = String(foodData[1])
+        for foodData in csvRows {
+            let name = NSLocalizedString(foodData[0], comment: "")
+            let hex = foodData[1]
             let group = Food.Kind(alias: foodData[2])
             let rawNumbers = foodData[3].split(separator: ",").compactMap { Int($0) }
             

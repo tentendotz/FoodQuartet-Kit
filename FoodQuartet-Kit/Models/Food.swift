@@ -43,7 +43,7 @@ extension Food {
     enum Kind: String {
         case vegetable, mushroom, seafood, meat, fruit, others
         
-        init(alias: Substring) {
+        init(alias: String) {
             switch alias.lowercased() {
             case "veg": self = .vegetable
             case "mush": self = .mushroom
