@@ -71,7 +71,18 @@ extension FoodBrain {
         }
         return foods
     }
+}
+
+
+// MARK: - Data Parsing Helpers
+
+extension FoodBrain {
     
+    /// Loads CSV file in the app bundle using the SwiftCSV library.
+    ///
+    /// - Parameters:
+    ///   - fileName: The name of the CSV file (without extension).
+    ///   - type: The file extension (default is "csv").
     private func loadCSV(from fileName: String, type: String = "csv") -> [[String]]? {
         do {
             let csv = try CSV<Enumerated>(name: fileName, extension: type, delimiter: .comma, loadColumns: false)
@@ -84,9 +95,6 @@ extension FoodBrain {
         }
         return nil
     }
-    
-    
-    // MARK: - Data Generating Helpers
     
     private func performConversion(from numbers: [Int]) -> Set<String> {
         let seasons = classifySeasons(from: numbers)
