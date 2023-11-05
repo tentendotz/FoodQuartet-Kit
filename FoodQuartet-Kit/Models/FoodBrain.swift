@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftCSV
 
 struct FoodBrain {
     
@@ -36,12 +37,15 @@ extension FoodBrain {
     
     private func generateFoods() -> [Food] {
         var foods = [Food]()
-        let components = foodsRawData.components(separatedBy: .newlines)
+        let fileName = "FoodsRawData"
         
-        for line in components {
-            let foodData = line.split(separator: "/")
-            let name = NSLocalizedString(String(foodData[0]), comment: "")
-            let hex = String(foodData[1])
+        guard let csvRows = loadCSV(from: fileName) else {
+            fatalError("Failed to load '\(fileName).csv' from the app bundle.")
+        }
+        
+        for foodData in csvRows {
+            let name = NSLocalizedString(foodData[0], comment: "")
+            let hex = foodData[1]
             let group = Food.Kind(alias: foodData[2])
             let rawNumbers = foodData[3].split(separator: ",").compactMap { Int($0) }
             
@@ -67,9 +71,30 @@ extension FoodBrain {
         }
         return foods
     }
+}
+
+
+// MARK: - Data Parsing Helpers
+
+extension FoodBrain {
     
-    
-    // MARK: - Data Generating Helpers
+    /// Loads CSV file in the app bundle using the SwiftCSV library.
+    ///
+    /// - Parameters:
+    ///   - fileName: The name of the CSV file (without extension).
+    ///   - type: The file extension (default is "csv").
+    private func loadCSV(from fileName: String, type: String = "csv") -> [[String]]? {
+        do {
+            let csv = try CSV<Enumerated>(name: fileName, extension: type, delimiter: .comma, loadColumns: false)
+            return csv?.rows
+            
+        } catch let parseError as CSVParseError {
+            print(parseError)
+        } catch {
+            print(error)
+        }
+        return nil
+    }
     
     private func performConversion(from numbers: [Int]) -> Set<String> {
         let seasons = classifySeasons(from: numbers)
