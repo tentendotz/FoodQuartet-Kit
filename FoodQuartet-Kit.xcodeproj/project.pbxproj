@@ -34,6 +34,7 @@
 		06A8F8902A811F6000399B31 /* UITableView+EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8F88F2A811F6000399B31 /* UITableView+EmptyState.swift */; };
 		06BA499F2AA4ACB80061CCD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06BA49A12AA4ACB80061CCD0 /* Localizable.strings */; };
 		06E13A0B2A7CD49F0084788E /* PlusButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E13A0A2A7CD49F0084788E /* PlusButtonCell.swift */; };
+		06EDC44D2AF90F89000F3647 /* MonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EDC44C2AF90F89000F3647 /* MonthCell.swift */; };
 		06FA9CE92AAE082E007EF3E6 /* WebSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FA9CE82AAE082E007EF3E6 /* WebSearchCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		06BA49A02AA4ACB80061CCD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		06BA49A22AA4B6910061CCD0 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		06E13A0A2A7CD49F0084788E /* PlusButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButtonCell.swift; sourceTree = "<group>"; };
+		06EDC44C2AF90F89000F3647 /* MonthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCell.swift; sourceTree = "<group>"; };
 		06FA9CE82AAE082E007EF3E6 /* WebSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSearchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,6 +184,7 @@
 			children = (
 				06A321422A504E1C00F1B4C2 /* MonthPicker.storyboard */,
 				06A321582A5054B100F1B4C2 /* MonthPickerViewController.swift */,
+				06EDC44C2AF90F89000F3647 /* MonthCell.swift */,
 			);
 			path = MonthPicker;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06EDC44D2AF90F89000F3647 /* MonthCell.swift in Sources */,
 				06FA9CE92AAE082E007EF3E6 /* WebSearchCell.swift in Sources */,
 				06A321572A50539200F1B4C2 /* SlotViewController.swift in Sources */,
 				06180D432A508EC80052D1B3 /* UIColor+HexColor.swift in Sources */,
