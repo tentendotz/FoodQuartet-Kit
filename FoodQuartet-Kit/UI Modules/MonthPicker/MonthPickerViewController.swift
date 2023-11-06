@@ -10,7 +10,15 @@ import UIKit
 final class MonthPickerViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
+    
+    private var twelveMonths = [[String]]()
+}
 
+
+extension MonthPickerViewController {
+    
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
