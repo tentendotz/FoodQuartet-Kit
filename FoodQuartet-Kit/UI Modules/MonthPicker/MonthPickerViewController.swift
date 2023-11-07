@@ -31,7 +31,9 @@ extension MonthPickerViewController {
         
         twelveMonths = populateMonths()
 
-        // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(MonthCell.self, forCellReuseIdentifier: K.MonthPickerVC.cellIdentifier)
     }
     
     
@@ -58,5 +60,27 @@ extension MonthPickerViewController {
     private func generateMonths(from numbers: [Int]) -> [String] {
         let months = numbers.map { DateFormatter.fullNameOfMonth(from: $0) }
         return months
+    }
+}
+
+
+// MARK: - UITableViewDataSource & UITableViewDelegate
+
+extension MonthPickerViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return Section.allCases.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return twelveMonths[section].count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.MonthPickerVC.cellIdentifier, for: indexPath) as? MonthCell else {
+            fatalError("Unable to dequeue MonthCell")
+        }
+        
+        return cell
     }
 }
