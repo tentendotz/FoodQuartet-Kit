@@ -12,6 +12,13 @@ final class MonthPickerViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     private var twelveMonths = [[String]]()
+    
+    
+    // MARK: - Section Handling
+    
+    enum Section: Int, CaseIterable {
+        case spring = 0, summer, fall, winter
+    }
 }
 
 
