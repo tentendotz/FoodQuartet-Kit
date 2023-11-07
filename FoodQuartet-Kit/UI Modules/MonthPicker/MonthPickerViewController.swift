@@ -21,6 +21,8 @@ extension MonthPickerViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        twelveMonths = populateMonths()
 
         // Do any additional setup after loading the view.
     }
@@ -32,5 +34,22 @@ extension MonthPickerViewController {
     }
 
     @IBAction private func donePressed(_ sender: UIButton) {
+    }
+    
+    
+    // MARK: - Additional Helpers
+    
+    private func populateMonths() -> [[String]] {
+        let springMonths = generateMonths(from: [3, 4, 5])
+        let summerMonths = generateMonths(from: [6, 7, 8])
+        let fallMonths = generateMonths(from: [9, 10, 11])
+        let winterMonths = generateMonths(from: [12, 1, 2])
+        
+        return [springMonths, summerMonths, fallMonths, winterMonths]
+    }
+    
+    private func generateMonths(from numbers: [Int]) -> [String] {
+        let months = numbers.map { DateFormatter.fullNameOfMonth(from: $0) }
+        return months
     }
 }
