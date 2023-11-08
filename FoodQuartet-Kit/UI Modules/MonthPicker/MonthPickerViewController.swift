@@ -85,4 +85,12 @@ extension MonthPickerViewController: UITableViewDataSource, UITableViewDelegate 
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if let selectedIndexPath = tableView.indexPathForSelectedRow, selectedIndexPath == indexPath {
+            tableView.deselectRow(at: indexPath, animated: false)
+            return nil
+        }
+        return indexPath
+    }
 }
