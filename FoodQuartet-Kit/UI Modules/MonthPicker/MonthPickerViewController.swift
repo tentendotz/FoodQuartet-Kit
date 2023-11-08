@@ -80,6 +80,8 @@ extension MonthPickerViewController: UITableViewDataSource, UITableViewDelegate 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: K.MonthPickerVC.cellIdentifier, for: indexPath) as? MonthCell else {
             fatalError("Unable to dequeue MonthCell")
         }
+        let monthName = twelveMonths[indexPath.section][indexPath.row]
+        cell.configureCell(title: monthName)
         
         return cell
     }

@@ -19,3 +19,26 @@ final class MonthCell: UITableViewCell {
 }
 
 
+extension MonthCell {
+    
+    func configureCell(title: String) {
+        self.configurationUpdateHandler = { cell, state in
+            var contentConfig = cell.defaultContentConfiguration().updated(for: state)
+            contentConfig.text = title
+            contentConfig.textProperties.color = UIColor.label
+            contentConfig.image = UIImage(systemName: "square")
+            contentConfig.imageProperties.tintColor = UIColor.secondaryLabel
+            
+            var backgroundConfig = UIBackgroundConfiguration.listPlainCell().updated(for: state)
+            backgroundConfig.backgroundColor = UIColor(named: K.Colors.secondary)
+            
+            if state.isSelected {
+                contentConfig.image = UIImage(systemName: "checkmark.square")
+                contentConfig.imageProperties.tintColor = UIColor.label
+                backgroundConfig.backgroundColor = UIColor(named: K.Colors.tertiary)
+            }
+            cell.contentConfiguration = contentConfig
+            cell.backgroundConfiguration = backgroundConfig
+        }
+    }
+}
