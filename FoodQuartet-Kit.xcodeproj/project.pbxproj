@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		061378C52AFBB1A400F0FEB0 /* MonthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061378C42AFBB1A400F0FEB0 /* MonthHeader.swift */; };
 		06180D372A5055640052D1B3 /* WebSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06180D362A5055640052D1B3 /* WebSearch.storyboard */; };
 		06180D3A2A5055C40052D1B3 /* WebSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06180D392A5055C40052D1B3 /* WebSearchViewController.swift */; };
 		06180D3E2A50788F0052D1B3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06180D3D2A50788F0052D1B3 /* Constants.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		061378C42AFBB1A400F0FEB0 /* MonthHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeader.swift; sourceTree = "<group>"; };
 		06180D362A5055640052D1B3 /* WebSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebSearch.storyboard; sourceTree = "<group>"; };
 		06180D392A5055C40052D1B3 /* WebSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSearchViewController.swift; sourceTree = "<group>"; };
 		06180D3D2A50788F0052D1B3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				06A321422A504E1C00F1B4C2 /* MonthPicker.storyboard */,
 				06A321582A5054B100F1B4C2 /* MonthPickerViewController.swift */,
 				06EDC44C2AF90F89000F3647 /* MonthCell.swift */,
+				061378C42AFBB1A400F0FEB0 /* MonthHeader.swift */,
 			);
 			path = MonthPicker;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				06180D432A508EC80052D1B3 /* UIColor+HexColor.swift in Sources */,
 				062554282A6036BE00AEF4F5 /* FoodBrain.swift in Sources */,
 				06A187862AD9728D0011D008 /* URLLoader.swift in Sources */,
+				061378C52AFBB1A400F0FEB0 /* MonthHeader.swift in Sources */,
 				064390692AA765E5005BC6D6 /* UIViewController+Alert.swift in Sources */,
 				06A8F8902A811F6000399B31 /* UITableView+EmptyState.swift in Sources */,
 				06A3212F2A504BB300F1B4C2 /* AppDelegate.swift in Sources */,
