@@ -9,6 +9,9 @@ import UIKit
 
 final class MonthHeader: UITableViewHeaderFooterView {
     
+    private let imageView = UIImageView()
+    private let titleLabel = UILabel()
+    
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
     }
