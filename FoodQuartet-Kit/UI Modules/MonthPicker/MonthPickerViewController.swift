@@ -18,6 +18,35 @@ final class MonthPickerViewController: UIViewController {
     
     enum Section: Int, CaseIterable {
         case spring = 0, summer, fall, winter
+        
+        var headerTitle: String {
+            switch self {
+            case .spring: return "Spring"
+            case .summer: return "Summer"
+            case .fall: return "Fall"
+            case .winter: return "Winter"
+            }
+        }
+        
+        var headerImage: UIImage? {
+            switch self {
+            case .spring: return UIImage(systemName: "circle.hexagongrid")
+            case .summer: return UIImage(systemName: "sun.max")
+            case .fall: return UIImage(systemName: "leaf")
+            case .winter: return UIImage(systemName: "snowflake")
+            }
+        }
+        
+        var headerColor: UIColor {
+            let color: UIColor
+            switch self {
+            case .spring: color = UIColor.calculateColor(.springHex)
+            case .summer: color = UIColor.calculateColor(.summerHex)
+            case .fall: color = UIColor.calculateColor(.fallHex)
+            case .winter: color = UIColor.calculateColor(.winterHex)
+            }
+            return color.withAlphaComponent(0.3)
+        }
     }
 }
 
