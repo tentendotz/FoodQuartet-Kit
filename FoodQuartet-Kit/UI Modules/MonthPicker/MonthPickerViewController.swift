@@ -111,6 +111,8 @@ extension MonthPickerViewController: UITableViewDataSource, UITableViewDelegate 
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: K.MonthPickerVC.headerIdentifier) as? MonthHeader else {
             fatalError("Unable to dequeue MonthHeader")
         }
+        let sectionKind = Section(rawValue: section)
+        header.configureHeader(title: sectionKind?.headerTitle, image: sectionKind?.headerImage, color: sectionKind?.headerColor)
         
         return header
     }

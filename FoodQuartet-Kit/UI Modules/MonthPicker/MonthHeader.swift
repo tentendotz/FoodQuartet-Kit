@@ -45,4 +45,15 @@ extension MonthHeader {
             titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
+    
+    func configureHeader(title: String?, image: UIImage?, color: UIColor?) {
+        titleLabel.text = title
+        titleLabel.textColor = UIColor.secondaryLabel
+        imageView.image = image
+        imageView.tintColor = UIColor.secondaryLabel
+        
+        var backgroundConfig = UIBackgroundConfiguration.listPlainHeaderFooter()
+        backgroundConfig.backgroundColor = color
+        self.backgroundConfiguration = backgroundConfig
+    }
 }
