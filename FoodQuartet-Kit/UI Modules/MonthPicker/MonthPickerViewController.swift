@@ -30,10 +30,12 @@ extension MonthPickerViewController {
         super.viewDidLoad()
         
         twelveMonths = populateMonths()
-
+        
+        tableView.sectionHeaderHeight = 35.0
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(MonthCell.self, forCellReuseIdentifier: K.MonthPickerVC.cellIdentifier)
+        tableView.register(MonthHeader.self, forHeaderFooterViewReuseIdentifier: K.MonthPickerVC.headerIdentifier)
     }
     
     
@@ -74,6 +76,14 @@ extension MonthPickerViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return twelveMonths[section].count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: K.MonthPickerVC.headerIdentifier) as? MonthHeader else {
+            fatalError("Unable to dequeue MonthHeader")
+        }
+        
+        return header
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
