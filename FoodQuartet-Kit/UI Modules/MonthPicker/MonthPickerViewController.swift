@@ -60,6 +60,7 @@ extension MonthPickerViewController {
         
         twelveMonths = populateMonths()
         
+        title = K.L10n.selectMonth
         tableView.sectionHeaderHeight = 35.0
         tableView.dataSource = self
         tableView.delegate = self
@@ -71,8 +72,9 @@ extension MonthPickerViewController {
     // MARK: - User Interaction
     
     @IBAction private func backPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
     }
-
+    
     @IBAction private func donePressed(_ sender: UIButton) {
     }
     

@@ -43,6 +43,9 @@
 "message_deselect_item" = "Deselect the item to perform the change button.";
 "title_ask_reset" = "Do you reset current filter?";
 
+// In MonthPickerVC
+"label_select_month" = "Select a month to filter foods";
+
 // In WebSearchVC
 "label_search_recipe" = "Search Recipe";
 "title_no_item_selected" = "Oops! You have not selected the item.";
@@ -52,7 +55,7 @@
 "label_dynamic_rate" = "%@/4 seasons";
 
 
-//MARK: - Food Data
+// MARK: - Food Data
 
 "name_burdock" = "Edible Burdock";
 "name_cabbage" = "Cabbage";
