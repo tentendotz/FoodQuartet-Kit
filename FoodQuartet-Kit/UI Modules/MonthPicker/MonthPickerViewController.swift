@@ -7,11 +7,19 @@
 
 import UIKit
 
+
+protocol MonthPickerDelegate: AnyObject {
+    
+    func updateFilter(from monthPicker: MonthPickerViewController, section: MonthPickerViewController.Section, selectedMonth: String)
+}
+
+
 final class MonthPickerViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
     private var twelveMonths = [[String]]()
+    weak var delegate: MonthPickerDelegate?
     
     
     // MARK: - Section Handling
