@@ -132,7 +132,25 @@ extension SlotViewController {
 }
 
 
-extension SlotViewController {
+extension SlotViewController: MonthPickerDelegate {
+    
+    // MARK: - Conforming to the MonthPickerDelegate
+    
+    func updateFilter(from monthPicker: MonthPickerViewController, section: MonthPickerViewController.Section, selectedMonth: String) {
+        userRules = [selectedMonth]
+        
+        switch section {
+        case .spring:
+            springButton.switchState(isSelected: true, backgroundColor: UIColor.calculateColor(.springHex))
+        case .summer:
+            summerButton.switchState(isSelected: true, backgroundColor: UIColor.calculateColor(.summerHex))
+        case .fall:
+            fallButton.switchState(isSelected: true, backgroundColor: UIColor.calculateColor(.fallHex))
+        case .winter:
+            winterButton.switchState(isSelected: true, backgroundColor: UIColor.calculateColor(.winterHex))
+        }
+    }
+    
     
     // MARK: - Navigation Transitions
     
