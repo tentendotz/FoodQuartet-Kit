@@ -84,6 +84,11 @@ extension MonthPickerViewController {
     }
     
     @IBAction private func donePressed(_ sender: UIButton) {
+        if let indexPath = tableView.indexPathForSelectedRow, let sectionKind = Section(rawValue: indexPath.section) {
+            let monthName = twelveMonths[indexPath.section][indexPath.row]
+            delegate?.updateFilter(from: self, section: sectionKind, selectedMonth: monthName)
+        }
+        dismiss(animated: true)
     }
     
     
