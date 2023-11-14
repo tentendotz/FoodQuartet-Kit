@@ -158,6 +158,10 @@ extension SlotViewController: MonthPickerDelegate {
         guard let segueID = segue.identifier else { return }
         
         switch (segueID, segue.destination) {
+        case (K.MonthPickerVC.segueIdentifier, let navController as UINavigationController):
+            guard let monthPickerVC = navController.topViewController as? MonthPickerViewController else { return }
+            monthPickerVC.delegate = self
+            
         case (K.WebSearchVC.segueIdentifier, let webSearchVC as WebSearchViewController):
             webSearchVC.currentItems = slotItems.filter { $0.isSelected }
             
