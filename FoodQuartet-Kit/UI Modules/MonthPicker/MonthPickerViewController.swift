@@ -7,9 +7,15 @@
 
 import UIKit
 
-
+/// A class-only protocol for month selection handling.
 protocol MonthPickerDelegate: AnyObject {
     
+    /// Notifies the delegate when a new filter is selected in the `MonthPickerViewController`.
+    ///
+    /// - Parameters:
+    ///   - monthPicker: The month picker view controller.
+    ///   - section: The selected section in the month picker.
+    ///   - selectedMonth: The selected month in the month picker.
     func updateFilter(from monthPicker: MonthPickerViewController, section: MonthPickerViewController.Section, selectedMonth: String)
 }
 
