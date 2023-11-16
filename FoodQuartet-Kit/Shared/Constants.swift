@@ -90,6 +90,9 @@ extension K {
         static let deselectItem = L10n.localized("message_deselect_item")
         static let askReset = L10n.localized("title_ask_reset")
         
+        // In MonthPickerVC
+        static let selectMonth = L10n.localized("label_select_month")
+        
         // In WebSearchVC
         static let searchRecipe = L10n.localized("label_search_recipe")
         static let noItemSelected = L10n.localized("title_no_item_selected")

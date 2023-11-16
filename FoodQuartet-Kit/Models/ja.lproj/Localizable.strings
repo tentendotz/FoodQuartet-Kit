@@ -43,6 +43,9 @@
 "message_deselect_item" = "食材の選択を解除してください。";
 "title_ask_reset" = "絞り込み条件を解除しますか？";
 
+// In MonthPickerVC
+"label_select_month" = "月ごとに食材を絞り込む";
+
 // In WebSearchVC
 "label_search_recipe" = "レシピ検索";
 "title_no_item_selected" = "食材が選択されていません";
@@ -52,7 +55,7 @@
 "label_dynamic_rate" = "%@/4 seasons";
 
 
-//MARK: - Food Data
+// MARK: - Food Data
 
 "name_burdock" = "ごぼう";
 "name_cabbage" = "キャベツ";

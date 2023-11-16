@@ -132,7 +132,25 @@ extension SlotViewController {
 }
 
 
-extension SlotViewController {
+extension SlotViewController: MonthPickerDelegate {
+    
+    // MARK: - Conforming to the MonthPickerDelegate
+    
+    func updateFilter(from monthPicker: MonthPickerViewController, section: MonthPickerViewController.Section, selectedMonth: String) {
+        userRules = [selectedMonth]
+        
+        switch section {
+        case .spring:
+            springButton.switchState(isSelected: true, backgroundColor: UIColor.calculateColor(.springHex))
+        case .summer:
+            summerButton.switchState(isSelected: true, backgroundColor: UIColor.calculateColor(.summerHex))
+        case .fall:
+            fallButton.switchState(isSelected: true, backgroundColor: UIColor.calculateColor(.fallHex))
+        case .winter:
+            winterButton.switchState(isSelected: true, backgroundColor: UIColor.calculateColor(.winterHex))
+        }
+    }
+    
     
     // MARK: - Navigation Transitions
     
@@ -140,6 +158,10 @@ extension SlotViewController {
         guard let segueID = segue.identifier else { return }
         
         switch (segueID, segue.destination) {
+        case (K.MonthPickerVC.segueIdentifier, let navController as UINavigationController):
+            guard let monthPickerVC = navController.topViewController as? MonthPickerViewController else { return }
+            monthPickerVC.delegate = self
+            
         case (K.WebSearchVC.segueIdentifier, let webSearchVC as WebSearchViewController):
             webSearchVC.currentItems = slotItems.filter { $0.isSelected }
             
