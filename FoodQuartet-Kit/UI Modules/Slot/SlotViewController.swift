@@ -70,7 +70,6 @@ extension SlotViewController {
         super.viewDidLoad()
         // HACK: Provisionally initialize for localized filter button label
         userRules = []
-        navigationItem.backButtonTitle = K.L10n.back
         customizeBarAttributes(for: navigationItem)
         
         tableView.dataSource = self
@@ -349,5 +348,6 @@ extension SlotViewController {
         titleLabel.attributedText = attributedTitle
         
         navigationItem.titleView = titleLabel
+        navigationItem.backButtonTitle = K.L10n.back
     }
 }
