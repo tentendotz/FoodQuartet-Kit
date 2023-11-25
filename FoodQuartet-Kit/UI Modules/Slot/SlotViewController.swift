@@ -350,4 +350,16 @@ extension SlotViewController {
         navigationItem.titleView = titleLabel
         navigationItem.backButtonTitle = K.L10n.back
     }
+    
+    
+    // MARK: - UI Layout Helper
+    
+    private func configureAttributes(for content: String, color: UIColor, fontSize: CGFloat, weight: UIFont.Weight) -> NSAttributedString {
+        let style: [NSAttributedString.Key: Any] = [
+            .foregroundColor: color,
+            .font: UIFont.systemFont(ofSize: fontSize, weight: weight)
+        ]
+        let attributed = NSAttributedString(string: content, attributes: style)
+        return attributed
+    }
 }
