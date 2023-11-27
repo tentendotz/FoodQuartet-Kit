@@ -317,35 +317,24 @@ extension SlotViewController {
     
     private func customizeBarAttributes(for navigationItem: UINavigationItem) {
         let size = 19.5
-        let defaultFont: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.label,
-            .font: UIFont.systemFont(ofSize: size, weight: .regular)
-        ]
-        let springFont: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.calculateColor(.springHex),
-            .font: UIFont.boldSystemFont(ofSize: size)
-        ]
-        let summerFont: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.calculateColor(.summerHex),
-            .font: UIFont.boldSystemFont(ofSize: size)
-        ]
-        let fallFont: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.calculateColor(.fallHex),
-            .font: UIFont.boldSystemFont(ofSize: size)
-        ]
-        let winterFont: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.calculateColor(.winterHex),
-            .font: UIFont.boldSystemFont(ofSize: size)
-        ]
+        let mergedAttributes = NSMutableAttributedString()
         
-        let attributedTitle = NSMutableAttributedString(string: "FoodQuartet", attributes: defaultFont)
-        attributedTitle.addAttributes(springFont, range: NSRange(location: 0, length: 1))
-        attributedTitle.addAttributes(summerFont, range: NSRange(location: 1, length: 1))
-        attributedTitle.addAttributes(fallFont, range: NSRange(location: 2, length: 1))
-        attributedTitle.addAttributes(winterFont, range: NSRange(location: 3, length: 1))
+        let characters = [
+            ("F", UIColor.calculateColor(.springHex)),
+            ("o", UIColor.calculateColor(.summerHex)),
+            ("o", UIColor.calculateColor(.fallHex)),
+            ("d", UIColor.calculateColor(.winterHex))
+        ]
+        for (char, color) in characters {
+            let currentChar = configureAttributes(for: char, color: color, fontSize: size, weight: .semibold)
+            mergedAttributes.append(currentChar)
+        }
+        
+        let additionalString = configureAttributes(for: "Quartet", color: .label, fontSize: size, weight: .regular)
+        mergedAttributes.append(additionalString)
         
         let titleLabel = UILabel()
-        titleLabel.attributedText = attributedTitle
+        titleLabel.attributedText = mergedAttributes
         
         navigationItem.titleView = titleLabel
         navigationItem.backButtonTitle = K.L10n.back
