@@ -44,7 +44,7 @@ final class MonthPickerViewController: UIViewController {
         
         var headerImage: UIImage? {
             switch self {
-            case .spring: return UIImage(systemName: "circle.hexagongrid")
+            case .spring: return UIImage(named: "CherryBlossomSymbol")
             case .summer: return UIImage(systemName: "sun.max")
             case .fall: return UIImage(systemName: "leaf")
             case .winter: return UIImage(systemName: "snowflake")
