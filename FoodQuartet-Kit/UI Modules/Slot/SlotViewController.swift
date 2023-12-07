@@ -317,7 +317,8 @@ extension SlotViewController {
     
     private func customizeBarAttributes(for navigationItem: UINavigationItem) {
         let size = 19.5
-        let mergedAttributes = NSMutableAttributedString()
+        var foodString = AttributedString()
+        let quartetString = configureAttributes(for: "Quartet", color: .label, fontSize: size, weight: .regular)
         
         let characters = [
             ("F", UIColor.calculateColor(.springHex)),
@@ -327,14 +328,11 @@ extension SlotViewController {
         ]
         for (char, color) in characters {
             let currentChar = configureAttributes(for: char, color: color, fontSize: size, weight: .semibold)
-            mergedAttributes.append(currentChar)
+            foodString.append(currentChar)
         }
         
-        let additionalString = configureAttributes(for: "Quartet", color: .label, fontSize: size, weight: .regular)
-        mergedAttributes.append(additionalString)
-        
         let titleLabel = UILabel()
-        titleLabel.attributedText = mergedAttributes
+        titleLabel.attributedText = NSAttributedString(foodString + quartetString)
         
         navigationItem.titleView = titleLabel
         navigationItem.backButtonTitle = K.L10n.back
@@ -343,12 +341,12 @@ extension SlotViewController {
     
     // MARK: - UI Layout Helper
     
-    private func configureAttributes(for content: String, color: UIColor, fontSize: CGFloat, weight: UIFont.Weight) -> NSAttributedString {
-        let style: [NSAttributedString.Key: Any] = [
-            .foregroundColor: color,
-            .font: UIFont.systemFont(ofSize: fontSize, weight: weight)
-        ]
-        let attributed = NSAttributedString(string: content, attributes: style)
+    private func configureAttributes(for content: String, color: UIColor, fontSize: CGFloat, weight: UIFont.Weight) -> AttributedString {
+        var container = AttributeContainer()
+        container.foregroundColor = color
+        container.font = UIFont.systemFont(ofSize: fontSize, weight: weight)
+        
+        let attributed = AttributedString(content, attributes: container)
         return attributed
     }
 }
