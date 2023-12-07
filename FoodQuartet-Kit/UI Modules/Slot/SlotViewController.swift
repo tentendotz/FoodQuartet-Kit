@@ -317,18 +317,25 @@ extension SlotViewController {
     
     private func customizeBarAttributes(for navigationItem: UINavigationItem) {
         let size = 19.5
-        var foodString = AttributedString()
-        let quartetString = configureAttributes(for: "Quartet", color: .label, fontSize: size, weight: .regular)
+        var foodString = configureAttributes(for: "Food", fontSize: size, weight: .semibold)
+        let quartetString = configureAttributes(for: "Quartet", fontSize: size, weight: .regular)
         
-        let characters = [
-            ("F", UIColor.calculateColor(.springHex)),
-            ("o", UIColor.calculateColor(.summerHex)),
-            ("o", UIColor.calculateColor(.fallHex)),
-            ("d", UIColor.calculateColor(.winterHex))
-        ]
-        for (char, color) in characters {
-            let currentChar = configureAttributes(for: char, color: color, fontSize: size, weight: .semibold)
-            foodString.append(currentChar)
+        for currentIndex in stride(from: 0, to: foodString.characters.count, by: 1) {
+            let start = foodString.index(foodString.startIndex, offsetByCharacters: currentIndex)
+            let end = foodString.index(afterCharacter: start)
+            let range = start..<end
+            
+            switch currentIndex {
+            case 0:
+                foodString[range].foregroundColor = UIColor.calculateColor(.springHex)
+            case 1:
+                foodString[range].foregroundColor = UIColor.calculateColor(.summerHex)
+            case 2:
+                foodString[range].foregroundColor = UIColor.calculateColor(.fallHex)
+            case 3:
+                foodString[range].foregroundColor = UIColor.calculateColor(.winterHex)
+            default: break
+            }
         }
         
         let titleLabel = UILabel()
@@ -341,7 +348,7 @@ extension SlotViewController {
     
     // MARK: - UI Layout Helper
     
-    private func configureAttributes(for content: String, color: UIColor, fontSize: CGFloat, weight: UIFont.Weight) -> AttributedString {
+    private func configureAttributes(for content: String, color: UIColor = .label, fontSize: CGFloat, weight: UIFont.Weight) -> AttributedString {
         var container = AttributeContainer()
         container.foregroundColor = color
         container.font = UIFont.systemFont(ofSize: fontSize, weight: weight)
