@@ -47,8 +47,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNk-mA-6fn">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.hexagongrid" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ds4-Ap-Lhv">
-                                                                <rect key="frame" x="1" y="-0.99999999999999645" width="18" height="22.666666666666668"/>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CherryBlossomSymbol" translatesAutoresizingMaskIntoConstraints="NO" id="Ds4-Ap-Lhv">
+                                                                <rect key="frame" x="1" y="1.0000000000000036" width="18" height="18"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="regular"/>
                                                             </imageView>
@@ -218,7 +218,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="circle.hexagongrid" catalog="system" width="128" height="115"/>
+        <image name="CherryBlossomSymbol" width="15" height="14"/>
         <image name="leaf" catalog="system" width="128" height="111"/>
         <image name="pin.circle.fill" catalog="system" width="128" height="123"/>
         <image name="snowflake" catalog="system" width="119" height="128"/>

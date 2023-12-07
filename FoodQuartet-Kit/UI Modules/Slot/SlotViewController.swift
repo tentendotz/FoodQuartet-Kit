@@ -70,7 +70,7 @@ extension SlotViewController {
         super.viewDidLoad()
         // HACK: Provisionally initialize for localized filter button label
         userRules = []
-        navigationItem.backButtonTitle = K.L10n.back
+        customizeBarAttributes(for: navigationItem)
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -313,5 +313,47 @@ extension SlotViewController {
             winter: itemSeasons.contains(K.L10n.winter)
         )
         return cell
+    }
+    
+    private func customizeBarAttributes(for navigationItem: UINavigationItem) {
+        let size = 19.5
+        var foodString = configureAttributes(for: "Food", fontSize: size, weight: .semibold)
+        let quartetString = configureAttributes(for: "Quartet", fontSize: size, weight: .regular)
+        
+        for currentIndex in stride(from: 0, to: foodString.characters.count, by: 1) {
+            let start = foodString.index(foodString.startIndex, offsetByCharacters: currentIndex)
+            let end = foodString.index(afterCharacter: start)
+            let range = start..<end
+            
+            switch currentIndex {
+            case 0:
+                foodString[range].foregroundColor = UIColor.calculateColor(.springHex)
+            case 1:
+                foodString[range].foregroundColor = UIColor.calculateColor(.summerHex)
+            case 2:
+                foodString[range].foregroundColor = UIColor.calculateColor(.fallHex)
+            case 3:
+                foodString[range].foregroundColor = UIColor.calculateColor(.winterHex)
+            default: break
+            }
+        }
+        
+        let titleLabel = UILabel()
+        titleLabel.attributedText = NSAttributedString(foodString + quartetString)
+        
+        navigationItem.titleView = titleLabel
+        navigationItem.backButtonTitle = K.L10n.back
+    }
+    
+    
+    // MARK: - UI Layout Helper
+    
+    private func configureAttributes(for content: String, color: UIColor = .label, fontSize: CGFloat, weight: UIFont.Weight) -> AttributedString {
+        var container = AttributeContainer()
+        container.foregroundColor = color
+        container.font = UIFont.systemFont(ofSize: fontSize, weight: weight)
+        
+        let attributed = AttributedString(content, attributes: container)
+        return attributed
     }
 }
