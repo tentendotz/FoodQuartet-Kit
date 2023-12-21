@@ -8,7 +8,7 @@
 import UIKit
 import SafariServices
 
-final class WebSearchViewController: UIViewController {
+final class WebSearchViewController: BaseViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
