@@ -18,6 +18,9 @@ class BaseViewController: UIViewController {
     
     // MARK: - Common Helpers
     
+    /// Display an alert with a custom title, message, and user-selectable actions.
+    ///
+    /// - By default, the `actions` parameter includes an OK action.
     func displayAlert(title: String, message: String?, actions: [UIAlertAction] = [okAction], style: UIAlertController.Style = .alert) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
         actions.forEach { alert.addAction($0) }
