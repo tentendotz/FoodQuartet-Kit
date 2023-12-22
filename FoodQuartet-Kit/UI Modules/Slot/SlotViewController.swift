@@ -122,8 +122,7 @@ extension SlotViewController {
         if slotItems.isEmpty { return }
         
         guard slotItems.contains(where: { !$0.isSelected }) else {
-            let okAction = UIAlertAction(title: K.L10n.ok, style: .default)
-            displayAlert(title: K.L10n.allPinned, message: K.L10n.deselectItem, actions: [okAction])
+            displayAlert(title: K.L10n.allPinned, message: K.L10n.deselectItem)
             return
         }
         performQuery()

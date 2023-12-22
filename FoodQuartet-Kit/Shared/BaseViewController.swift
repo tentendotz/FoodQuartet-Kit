@@ -9,6 +9,8 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    static let okAction = UIAlertAction(title: K.L10n.ok, style: .default)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -16,7 +18,7 @@ class BaseViewController: UIViewController {
     
     // MARK: - Common Helpers
     
-    func displayAlert(title: String, message: String?, actions: [UIAlertAction], style: UIAlertController.Style = .alert) {
+    func displayAlert(title: String, message: String?, actions: [UIAlertAction] = [okAction], style: UIAlertController.Style = .alert) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
         actions.forEach { alert.addAction($0) }
         present(alert, animated: true)
