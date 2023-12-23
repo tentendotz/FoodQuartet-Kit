@@ -20,7 +20,7 @@ protocol MonthPickerDelegate: AnyObject {
 }
 
 
-final class MonthPickerViewController: UIViewController {
+final class MonthPickerViewController: BaseViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
