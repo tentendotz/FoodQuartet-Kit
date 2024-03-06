@@ -10,10 +10,11 @@ on:
 
 jobs:
   SwiftLint:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/realm/swiftlint:0.54.0
 
     steps:
       - uses: actions/checkout@v4
-      - name: Run SwiftLint
-        run: |
-          swiftlint lint --quiet --reporter github-actions-logging
+      - name: Run SwiftLint v0.54.0
+        run: swiftlint lint --quiet --reporter github-actions-logging
