@@ -1,7 +1,7 @@
 FoodQuartet
 ===========
 This app helps you cook a meal using seasonal foods in Japan.  
-You can choose from a random food list filtered by season or month, then search for the recipes on Google.
+You can choose from a random food list filtered by season or month, and then search for the recipes on Google.
 
 <a href="https://foodquartet.netlify.app/">
 	<img src="./.github/media-assets/banner.png" alt="app-banner" width="1012" height="434" style="width: 100%; height: 100%;">
